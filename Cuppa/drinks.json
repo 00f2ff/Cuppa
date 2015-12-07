@@ -1,0 +1,659 @@
+{
+	"drinks": [
+		{
+			"name": "Coffee",
+			"image": "",
+			"favorite": false,
+			"category": "Coffee",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 12
+				}
+			],
+			"details": "Different brew techniques include drip, French press, percolated, Turkish, cold and vacuum."
+		},
+		{
+			"name": "Caffè Americano",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Water",
+				    "amount": 11
+				}
+			],
+			"details": "Add hot water to espresso to create a drink of similar strength, but different flavor."
+		},
+		{
+			"name": "Café Cubano",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Brown Sugar",
+				    "amount": 0
+				}
+			],
+			"details": "A sweetened espresso drink popular in Cuba and South Florida."
+		},
+		{
+			"name": "Solo",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				}
+			],
+			"details": "A single shot of espresso. A shot made with half the normal volume of water is called a ristretto, and one made with twice the normal volume is called a lungo."
+		},
+		{
+			"name": "Doppio",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				}
+			],
+			"details": "A double shot of espresso."
+		},
+		{
+			"name": "Cafe Zorro",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Water",
+					"amount": 2
+				}
+			],
+			"details": "A double shot of espresso with equal parts hot water."
+		},
+		{
+			"name": "Espresso Romano",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Lemon",
+					"amount": 0
+				}
+			],
+			"details": "Lemon brings out the espresso's sweetness."
+		},
+		{
+			"name": "Guillermo",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Lime",
+					"amount": 0
+				}
+			],
+			"details": "Espresso poured over lime."
+		},
+		{
+			"name": "Antoccino",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Milk",
+					"amount": 1
+				}
+			],
+			"details": "Equal parts espresso and steamed milk."
+		},
+		{
+			"name": "Breve",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 1
+				},
+                      {
+                      "name": "Cream",
+                      "amount": 1
+                      }
+			],
+			"details": "An espresso, milk and cream mixture."
+		},
+		{
+			"name": "Café bombón",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Condensed Milk",
+					"amount": 2
+				}
+			],
+			"details": "A sweet mixture of espresso and condensed milk."
+		},
+		{
+			"name": "Cappuccino",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 10
+				},
+                      {
+                      "name": "Foam",
+                      "amount": 0
+                      }
+			],
+			"details": "An espresso drink with steamed milk, notable for its high volume of foam."
+		},
+		{
+			"name": "Cortado",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 5
+				}
+			],
+			"details": "Milk is added after the espresso to reduce its acidity."
+		},
+		{
+			"name": "Latte",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 10
+				},
+                      {
+                      "name": "Foam",
+                      "amount": 0
+                      }
+			],
+			"details": "Similar to the cappuccino, but with little foam."
+		},
+		{
+			"name": "Espressino",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Nutella",
+					"amount": 2
+				},
+				{
+					"name": "Cocoa Powder",
+					"amount": 0
+				}
+			],
+			"details": "Espresso served in a cup smeared with Nutella with cocoa powder on the bottom."
+		},
+		{
+			"name": "Flat White",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 10
+				}
+			],
+			"details": "Similar to a latte, but with less froth and a velvety texture."
+		},
+		{
+			"name": "Macchiato",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Foam",
+					"amount": 0
+				}
+			],
+			"details": "Espresso with a dash of foamed milk, giving it a stronger taste than a cappucino."
+		},
+		{
+			"name": "Galão",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 6
+				},
+                      {
+                      "name": "Foam",
+                      "amount": 0
+                      }
+			],
+			"details": "A Portuguese drink made with foamed milk."
+		},
+		{
+			"name": "Wiener Melange",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 10
+				}
+			],
+			"details": "A Viennese drink similar to a cappuccino."
+		},
+		{
+			"name": "Café au lait",
+			"image": "",
+			"favorite": false,
+			"category": "Coffee",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 6
+				},
+				{
+					"name": "Milk",
+					"amount": 6
+				}
+			],
+			"details": "A French drink prepared with scalded milk in America."
+		},
+		{
+			"name": "Ca phe sua da",
+			"image": "",
+			"favorite": false,
+			"category": "Coffee",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 8
+				},
+				{
+					"name": "Condensed Milk",
+					"amount": 4
+				},
+				{
+					"name": "Ice",
+					"amount": 0
+				}
+			],
+			"details": "A Vietnamese iced coffee drink"
+		},
+		{
+			"name": "Eiskaffee",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 8
+				},
+				{
+					"name": "Vanilla Ice Cream",
+					"amount": 4
+				}
+			],
+			"details": "A German drink meaning 'ice cream coffee'"
+		},
+		{
+			"name": "Kopi susu",
+			"image": "",
+			"favorite": false,
+			"category": "Coffee",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 6
+				},
+				{
+					"name": "Condensed Milk",
+					"amount": 6
+				}
+			],
+			"details": "Southeast Asian drink similar to Ca phe sua nong, a non-iced version of Ca phe sua da"
+		},
+		{
+			"name": "White Coffee",
+			"image": "",
+			"favorite": false,
+			"category": "Coffee",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 11
+				},
+				{
+					"name": "Milk",
+					"amount": 1
+				}
+			],
+			"details": "An English drink with a small amount of cold milk added. Its Malaysian counterpart is served with special beans and condensed milk."
+		},
+		{
+			"name": "Vienna Coffee",
+			"image": "",
+			"favorite": false,
+			"category": "Coffee",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 10
+				},
+				{
+					"name": "Whipped Cream",
+					"amount": 2
+				}
+			],
+			"details": "Coffee topped with whipped cream."
+		},
+		{
+			"name": "Espresso con panna",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Whipped Cream",
+					"amount": 2
+				}
+			],
+			"details": "Espresso topped with whipped cream."
+		},
+		{
+			"name": "Dirty Chai Latte",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Milk",
+					"amount": 5
+				},
+				{
+					"name": "Chai Tea",
+					"amount": 6
+				}
+			],
+			"details": "A Chai latte with an espresso shot."
+		},
+		{
+			"name": "Irish Coffee",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 11
+				},
+				{
+					"name": "Whiskey",
+					"amount": 1
+				},
+				{
+					"name": "Sugar",
+					"amount": 0
+				},
+				{
+					"name": "Cream",
+					"amount": 0
+				}
+			],
+			"details": "An alcoholic coffee drink."
+		},
+		{
+			"name": "Pharisäer",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 9
+				},
+				{
+					"name": "Rum",
+					"amount": 3
+				},
+				{
+					"name": "Whipped Cream",
+					"amount": 2
+				}
+			],
+			"details": "An alcoholic drink popular in Germany."
+		},
+		{
+			"name": "Spanish Coffee",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 8
+				},
+				{
+					"name": "Rum",
+					"amount": 2
+				},
+				{
+					"name": "Triple Sec",
+					"amount": 1
+				},
+				{
+					"name": "Coffee Liqueur",
+					"amount": 4
+				},
+				{
+					"name": "Whipped Cream",
+					"amount": 2
+				}
+			],
+			"details": "The Americanized version of a Carajillo (coffee and alcohol)."
+		},
+		{
+			"name": "Melya",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Coffee",
+				    "amount": 12
+				},
+				{
+					"name": "Cocoa Powder",
+					"amount": 0
+				},
+				{
+					"name": "Honey",
+					"amount": 0
+				}
+			],
+			"details": "Coffee flavored with cocoa powder and honey."
+		},
+		{
+			"name": "Caffè Marocchino",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 6
+				},
+				{
+					"name": "Cocoa Powder",
+					"amount": 0
+				}
+			],
+			"details": "Similar to the espressino, but with milk and no Nutella coating."
+		},
+		{
+			"name": "Cafè miel",
+			"image": "",
+			"favorite": false,
+			"category": "Flavored",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 1
+				},
+				{
+					"name": "Milk",
+					"amount": 5
+				},
+				{
+					"name": "Cinnamon",
+					"amount": 0
+				},
+				{
+					"name": "Honey",
+					"amount": 0
+				}
+			],
+			"details": "Like a small latte with honey."
+		},
+		{
+			"name": "Cafè Mocha",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Milk",
+					"amount": 9
+				},
+				{
+					"name": "Chocolate",
+					"amount": 1
+				}
+			],
+			"details": "Like a latte with chocolate."
+		},
+		{
+			"name": "Palazzo",
+			"image": "",
+			"favorite": false,
+			"category": "Espresso",
+			"ingredients": [
+				{
+					"name": "Espresso",
+				    "amount": 2
+				},
+				{
+					"name": "Cream",
+					"amount": 1
+				}
+			],
+			"details": "A chilled espresso drink popular in Southern California."
+		}
+	]
+}
