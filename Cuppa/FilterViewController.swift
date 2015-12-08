@@ -83,7 +83,6 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
   var mainVolume : Int = 0
   var secondaryVolume : Int = 0
   
-  
   // OVERRIDES
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -99,13 +98,10 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     tableView.tableFooterView = UIView()
     
     tableView.backgroundColor = UIColor.clearColor()
-//  
-    let gradientColor = GradientColor(UIGradientStyle.LeftToRight, view.frame, [FlatBrownDark(), FlatWhite()])
-    tableView.separatorColor = gradientColor
     
-    self.view.backgroundColor = gradientColor
-    // set background color
-    
+//    let gradientColor = GradientColor(UIGradientStyle.TopToBottom, view.frame, [FlatBrownDark(), FlatWhite()])
+    tableView.separatorColor = FlatBrownDark()
+    self.view.backgroundColor = FlatBrownDark()
     
   } // viewDidLoad
 
