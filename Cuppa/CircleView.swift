@@ -10,7 +10,7 @@ import UIKit
 
 class CircleView: UIView {
   
-  var color : UIColor = UIColor.blackColor()
+  var color : UIColor = UIColor.clearColor()
   
   override init(frame: CGRect) {
     super.init(frame: frame)

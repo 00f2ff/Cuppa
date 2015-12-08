@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
@@ -96,7 +97,16 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     tableView.dataSource = self
     // remove extra lines at bottom
     tableView.tableFooterView = UIView()
-    tableView.separatorColor = UIColor.clearColor()
+    
+    tableView.backgroundColor = UIColor.clearColor()
+//  
+    let gradientColor = GradientColor(UIGradientStyle.LeftToRight, view.frame, [FlatBrownDark(), FlatWhite()])
+    tableView.separatorColor = gradientColor
+    
+    self.view.backgroundColor = gradientColor
+    // set background color
+    
+    
   } // viewDidLoad
 
   override func didReceiveMemoryWarning() {

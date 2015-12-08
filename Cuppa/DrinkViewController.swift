@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
 
 class DrinkViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
   
@@ -87,10 +88,15 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
         // there may not also be an image
         cell.amountLabel.text = ""
       }
-      println(cell.ingredientLabel.text)
+      cell.circleView.color = ingredient.color()
     }
     return cell
   } // tableView
+  
+  
+  
+  
+  
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
