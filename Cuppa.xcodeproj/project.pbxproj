@@ -24,6 +24,9 @@
 		AE0FC1F21C16408C0001ACD4 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1F11C16408C0001ACD4 /* CircleView.swift */; };
 		AE0FC1F51C1640FF0001ACD4 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1F41C1640FF0001ACD4 /* DrinkCell.swift */; };
 		AE0FC1F71C1641090001ACD4 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1F61C1641090001ACD4 /* IngredientCell.swift */; };
+		AE0FC1F91C1645120001ACD4 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1F81C1645120001ACD4 /* DrinkViewController.swift */; };
+		AE0FC1FC1C16577F0001ACD4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1FB1C16577F0001ACD4 /* Location.swift */; };
+		AE0FC1FE1C1657B00001ACD4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1FD1C1657B00001ACD4 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		AE0FC1F11C16408C0001ACD4 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		AE0FC1F41C1640FF0001ACD4 /* DrinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 		AE0FC1F61C1641090001ACD4 /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		AE0FC1F81C1645120001ACD4 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
+		AE0FC1FB1C16577F0001ACD4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		AE0FC1FD1C1657B00001ACD4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,13 +129,13 @@
 				AE0FC1E91C1640590001ACD4 /* Models */,
 				AE0FC1E71C16403D0001ACD4 /* drinks.json */,
 				AE0FC1C31C1639CD0001ACD4 /* AppDelegate.swift */,
-				AE0FC1C51C1639CD0001ACD4 /* FilterViewController.swift */,
-				AE0FC1C71C1639CD0001ACD4 /* ListViewController.swift */,
+				AE0FC1FA1C1645660001ACD4 /* Controllers */,
 				AE0FC1C91C1639CD0001ACD4 /* Main.storyboard */,
 				AE0FC1CC1C1639CD0001ACD4 /* Images.xcassets */,
 				AE0FC1CE1C1639CD0001ACD4 /* LaunchScreen.xib */,
 				AE0FC1C11C1639CD0001ACD4 /* Supporting Files */,
 				AE0FC1E51C163FB70001ACD4 /* SwiftyJSON.swift */,
+				AE0FC1FB1C16577F0001ACD4 /* Location.swift */,
 			);
 			path = Cuppa;
 			sourceTree = "<group>";
@@ -184,6 +190,17 @@
 				AE0FC1F61C1641090001ACD4 /* IngredientCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		AE0FC1FA1C1645660001ACD4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE0FC1C51C1639CD0001ACD4 /* FilterViewController.swift */,
+				AE0FC1C71C1639CD0001ACD4 /* ListViewController.swift */,
+				AE0FC1F81C1645120001ACD4 /* DrinkViewController.swift */,
+				AE0FC1FD1C1657B00001ACD4 /* MapViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		B56B0A9C075CC9B46FA1E7B6 /* Frameworks */ = {
@@ -401,9 +418,12 @@
 				AE0FC1EE1C1640760001ACD4 /* Ingredient.swift in Sources */,
 				AE0FC1F51C1640FF0001ACD4 /* DrinkCell.swift in Sources */,
 				AE0FC1C41C1639CD0001ACD4 /* AppDelegate.swift in Sources */,
+				AE0FC1FE1C1657B00001ACD4 /* MapViewController.swift in Sources */,
 				AE0FC1F71C1641090001ACD4 /* IngredientCell.swift in Sources */,
 				AE0FC1C61C1639CD0001ACD4 /* FilterViewController.swift in Sources */,
+				AE0FC1F91C1645120001ACD4 /* DrinkViewController.swift in Sources */,
 				AE0FC1F01C16407E0001ACD4 /* Drink.swift in Sources */,
+				AE0FC1FC1C16577F0001ACD4 /* Location.swift in Sources */,
 				AE0FC1E61C163FB70001ACD4 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

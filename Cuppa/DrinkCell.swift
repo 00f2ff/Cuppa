@@ -12,8 +12,11 @@ import UIKit
 class DrinkCell: UITableViewCell {
   
   @IBOutlet weak var nameLabel: UILabel!
-  // implementing images later
   @IBOutlet weak var drinkImageView: UIImageView!
+  
+//  @IBOutlet weak var nameLabel: UILabel!
+  // implementing images later
+//  @IBOutlet weak var drinkImageView: UIImageView!
   
   override func awakeFromNib() {
     super.awakeFromNib()

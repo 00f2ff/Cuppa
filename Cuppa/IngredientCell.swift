@@ -12,6 +12,8 @@ import UIKit
 
 class IngredientCell: UITableViewCell {
   
+  
+//  @IBOutlet weak var circleView: UIView! // Do I want this or the included one?
   @IBOutlet weak var ingredientLabel: UILabel!
   @IBOutlet weak var amountLabel: UILabel!
   @IBOutlet weak var circleView: CircleView!
