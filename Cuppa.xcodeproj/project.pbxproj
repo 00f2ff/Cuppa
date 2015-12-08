@@ -31,6 +31,8 @@
 		AE0FC20D1C1693020001ACD4 /* List-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20C1C1693020001ACD4 /* List-50.png */; };
 		AE0FC2101C1693480001ACD4 /* Filter-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20E1C1693480001ACD4 /* Filter-32.png */; };
 		AE0FC2111C1693480001ACD4 /* List-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20F1C1693480001ACD4 /* List-32.png */; };
+		AE0FC2141C169A560001ACD4 /* CupHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2131C169A560001ACD4 /* CupHolderView.swift */; };
+		AE0FC2161C169AF50001ACD4 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		AE0FC20C1C1693020001ACD4 /* List-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-50.png"; path = "../../../../../../Downloads/List-50.png"; sourceTree = "<group>"; };
 		AE0FC20E1C1693480001ACD4 /* Filter-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filter-32.png"; path = "../../../../../../Downloads/Filter-32.png"; sourceTree = "<group>"; };
 		AE0FC20F1C1693480001ACD4 /* List-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-32.png"; path = "../../../../../../Downloads/List-32.png"; sourceTree = "<group>"; };
+		AE0FC2131C169A560001ACD4 /* CupHolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupHolderView.swift; sourceTree = "<group>"; };
+		AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,7 +191,9 @@
 		AE0FC1EA1C1640600001ACD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE0FC2121C169A410001ACD4 /* Layers */,
 				AE0FC1F11C16408C0001ACD4 /* CircleView.swift */,
+				AE0FC2131C169A560001ACD4 /* CupHolderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -221,6 +227,14 @@
 				AE0FC2071C1692AA0001ACD4 /* Filter-50.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		AE0FC2121C169A410001ACD4 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */,
+			);
+			name = Layers;
 			sourceTree = "<group>";
 		};
 		B56B0A9C075CC9B46FA1E7B6 /* Frameworks */ = {
@@ -439,6 +453,7 @@
 				AE0FC1F21C16408C0001ACD4 /* CircleView.swift in Sources */,
 				AE0FC1C81C1639CD0001ACD4 /* ListViewController.swift in Sources */,
 				AE0FC1EC1C16406B0001ACD4 /* DataManager.swift in Sources */,
+				AE0FC2141C169A560001ACD4 /* CupHolderView.swift in Sources */,
 				AE0FC1EE1C1640760001ACD4 /* Ingredient.swift in Sources */,
 				AE0FC1F51C1640FF0001ACD4 /* DrinkCell.swift in Sources */,
 				AE0FC1C41C1639CD0001ACD4 /* AppDelegate.swift in Sources */,
@@ -447,6 +462,7 @@
 				AE0FC1C61C1639CD0001ACD4 /* FilterViewController.swift in Sources */,
 				AE0FC1F91C1645120001ACD4 /* DrinkViewController.swift in Sources */,
 				AE0FC1F01C16407E0001ACD4 /* Drink.swift in Sources */,
+				AE0FC2161C169AF50001ACD4 /* ArcLayer.swift in Sources */,
 				AE0FC1FC1C16577F0001ACD4 /* Location.swift in Sources */,
 				AE0FC1E61C163FB70001ACD4 /* SwiftyJSON.swift in Sources */,
 			);

@@ -16,8 +16,10 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var detailsLabel: UILabel!
+  @IBOutlet weak var cupHolderView: CupHolderView!
   //  @IBOutlet weak var cupView : UIView!
   //  @IBOutlet weak var favoriteButton : UIButton!
+  
   
   
   // ACTIONS
@@ -36,6 +38,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
 //  var cupView = CupView(frame: CGRectZero)
   var drink: Drink?
   var thisDrink : Drink!
+//  var cupHolderView = CupHolderView(frame: CGRectZero)
   
   
   // OVERRIDES
@@ -54,6 +57,8 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
     // remove extra lines at bottom
     tableView.tableFooterView = UIView()
     tableView.separatorColor = UIColor.clearColor()
+    
+    cupHolderView.drawArc()
   } // viewDidLoad
   
   override func didReceiveMemoryWarning() {
@@ -108,6 +113,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   
   
   // FUNCTIONS
+  
   //  func changeButtonTitle(thisDrink: Drink) {
   //    if (thisDrink.favorite != false) {
   //      favoriteButton.setTitle("Unfavorite", forState: .Normal)

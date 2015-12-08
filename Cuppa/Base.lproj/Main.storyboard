@@ -245,43 +245,68 @@
                                         <exclude reference="g7g-NM-kFm"/>
                                     </mask>
                                 </variation>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-tE-Jum">
-                                <rect key="frame" x="150" y="458" width="300" height="80"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="50" y="474" width="300" height="80"/>
+                                    <rect key="frame" x="50" y="276" width="300" height="150"/>
                                 </variation>
-                            </label>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGE-bR-g13">
                                 <rect key="frame" x="255" y="72" width="90.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu">
-                                <rect key="frame" x="150" y="152" width="300" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu" customClass="CupHolderView" customModule="Cuppa" customModuleProvider="target">
+                                <rect key="frame" x="150" y="122" width="300" height="180"/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="gYZ-xR-LOa"/>
+                                    <constraint firstAttribute="height" constant="180" id="gYZ-xR-LOa"/>
                                     <constraint firstAttribute="width" constant="300" id="vUR-UK-Aip"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="50" y="150" width="300" height="150"/>
+                                </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-tE-Jum">
+                                <rect key="frame" x="150" y="458" width="300" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="T4f-su-fdp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="T4f-su-fdp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="50" y="434" width="300" height="80"/>
+                                    <mask key="constraints">
+                                        <include reference="T4f-su-fdp"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="X7g-iT-twC" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="8sZ-01-v7d"/>
                             <constraint firstAttribute="centerX" secondItem="X7g-iT-twC" secondAttribute="centerX" id="9sn-ch-Tk2"/>
-                            <constraint firstItem="8jA-tE-Jum" firstAttribute="top" secondItem="X7g-iT-twC" secondAttribute="bottom" constant="30" id="Ick-K1-I1e"/>
+                            <constraint firstItem="8jA-tE-Jum" firstAttribute="top" secondItem="X7g-iT-twC" secondAttribute="bottom" constant="30" id="Ick-K1-I1e">
+                                <variation key="heightClass=regular-widthClass=compact" constant="17"/>
+                            </constraint>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="T9N-ft-19i"/>
-                            <constraint firstItem="evQ-tN-fSu" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="134" id="TGV-CR-ksC"/>
+                            <constraint firstItem="evQ-tN-fSu" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="134" id="TGV-CR-ksC">
+                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="8jA-tE-Jum" secondAttribute="trailing" constant="34" id="U2x-s6-THt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X7g-iT-twC" secondAttribute="trailing" constant="34" id="UVK-iz-sA6"/>
-                            <constraint firstItem="evQ-tN-fSu" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="88" id="b6q-WW-n8P"/>
-                            <constraint firstItem="X7g-iT-twC" firstAttribute="top" secondItem="GGE-bR-g13" secondAttribute="bottom" constant="202" id="bbW-j9-FsJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="evQ-tN-fSu" secondAttribute="trailing" constant="134" id="chq-rQ-V8s"/>
+                            <constraint firstItem="evQ-tN-fSu" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="58" id="b6q-WW-n8P"/>
+                            <constraint firstItem="X7g-iT-twC" firstAttribute="top" secondItem="GGE-bR-g13" secondAttribute="bottom" constant="202" id="bbW-j9-FsJ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="244.5"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="evQ-tN-fSu" secondAttribute="trailing" constant="134" id="chq-rQ-V8s">
+                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                            </constraint>
                             <constraint firstItem="GGE-bR-g13" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="8" id="pwM-S9-qds"/>
                             <constraint firstAttribute="centerX" secondItem="GGE-bR-g13" secondAttribute="centerX" constant="-0.5" id="vfq-pm-gTa"/>
                         </constraints>
@@ -305,6 +330,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cupHolderView" destination="evQ-tN-fSu" id="Fvf-rt-Lgj"/>
                         <outlet property="detailsLabel" destination="8jA-tE-Jum" id="E4J-Ni-z1b"/>
                         <outlet property="nameLabel" destination="GGE-bR-g13" id="O1C-H6-72E"/>
                         <outlet property="tableView" destination="X7g-iT-twC" id="ke4-oI-aad"/>
