@@ -50,15 +50,18 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       println(thisDrink.name)
       nameLabel.text = thisDrink.name
       detailsLabel.text = thisDrink.details
+      tableView.delegate = self
+      tableView.dataSource = self
+      // remove extra lines at bottom
+      tableView.tableFooterView = UIView()
+      tableView.separatorColor = UIColor.clearColor()
+      
+      cupHolderView.drawArc(cupHolderView.frame.height, width: cupHolderView.frame.width, ingredients: thisDrink.ingredients)
     }
 //    addCupView()
-    tableView.delegate = self
-    tableView.dataSource = self
-    // remove extra lines at bottom
-    tableView.tableFooterView = UIView()
-    tableView.separatorColor = UIColor.clearColor()
     
-    cupHolderView.drawArc()
+    
+//    cupHolderView.drawArc(FlatCoffee().CGColor, height: cupHolderView.frame.height, width: cupHolderView.frame.width, beginTime: 1.0)
   } // viewDidLoad
   
   override func didReceiveMemoryWarning() {

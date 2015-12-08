@@ -12,6 +12,8 @@ import UIKit
 class ArcLayer: CAShapeLayer {
   
   let animationDuration: CFTimeInterval = 1
+  var width : CGFloat = 150.0
+  var height : CGFloat = 150.0
   
   override init!() {
     super.init()
@@ -23,72 +25,74 @@ class ArcLayer: CAShapeLayer {
     fatalError("init(coder:) has not been implemented")
   }
   
+  // points of each curve (appear to alternate based on animation switching)
   var arcPathPre: UIBezierPath {
     var arcPath = UIBezierPath()
-    arcPath.moveToPoint(CGPoint(x: 0.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 99.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: 99.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 100.0))
+    arcPath.moveToPoint(CGPoint(x: 0.0, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height * 0.99))
+    arcPath.addLineToPoint(CGPoint(x: width, y: height * 0.99))
+    arcPath.addLineToPoint(CGPoint(x: width, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height))
     arcPath.closePath()
     return arcPath
   }
   
   var arcPathStarting: UIBezierPath {
     var arcPath = UIBezierPath()
-    arcPath.moveToPoint(CGPoint(x: 0.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 80.0))
-    arcPath.addCurveToPoint(CGPoint(x: 100.0, y: 80.0), controlPoint1: CGPoint(x: 30.0, y: 70.0), controlPoint2: CGPoint(x: 40.0, y: 90.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 100.0))
+    arcPath.moveToPoint(CGPoint(x: 0.0, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height * 0.80))
+    arcPath.addCurveToPoint(CGPoint(x: width, y: height * 0.80), controlPoint1: CGPoint(x: width * 0.30, y: height * 0.70), controlPoint2: CGPoint(x: width * 0.40, y: height * 0.90))
+    arcPath.addLineToPoint(CGPoint(x: width, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height))
     arcPath.closePath()
     return arcPath
   }
   
   var arcPathLow: UIBezierPath {
     var arcPath = UIBezierPath()
-    arcPath.moveToPoint(CGPoint(x: 0.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 60.0))
-    arcPath.addCurveToPoint(CGPoint(x: 100.0, y: 60.0), controlPoint1: CGPoint(x: 30.0, y: 65.0), controlPoint2: CGPoint(x: 40.0, y: 50.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 100.0))
+    arcPath.moveToPoint(CGPoint(x: 0.0, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height * 0.60))
+    arcPath.addCurveToPoint(CGPoint(x: width, y: height * 0.60), controlPoint1: CGPoint(x: width * 0.30, y: height * 0.65), controlPoint2: CGPoint(x: width * 0.40, y: height * 0.50))
+    arcPath.addLineToPoint(CGPoint(x: width, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height))
     arcPath.closePath()
     return arcPath
   }
   
   var arcPathMid: UIBezierPath {
     var arcPath = UIBezierPath()
-    arcPath.moveToPoint(CGPoint(x: 0.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 40.0))
-    arcPath.addCurveToPoint(CGPoint(x: 100.0, y: 40.0), controlPoint1: CGPoint(x: 30.0, y: 30.0), controlPoint2: CGPoint(x: 40.0, y: 50.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 100.0))
+    arcPath.moveToPoint(CGPoint(x: 0.0, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: width * 0.40))
+    arcPath.addCurveToPoint(CGPoint(x: width, y: height * 0.40), controlPoint1: CGPoint(x: width * 0.30, y: height * 0.30), controlPoint2: CGPoint(x: width * 0.40, y: height * 0.50))
+    arcPath.addLineToPoint(CGPoint(x: width, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height))
     arcPath.closePath()
     return arcPath
   }
   
   var arcPathHigh: UIBezierPath {
     var arcPath = UIBezierPath()
-    arcPath.moveToPoint(CGPoint(x: 0.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 20.0))
-    arcPath.addCurveToPoint(CGPoint(x: 100.0, y: 20.0), controlPoint1: CGPoint(x: 30.0, y: 25.0), controlPoint2: CGPoint(x: 40.0, y: 10.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 100.0))
+    arcPath.moveToPoint(CGPoint(x: 0.0, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height * 0.20))
+    arcPath.addCurveToPoint(CGPoint(x: width, y: height * 0.20), controlPoint1: CGPoint(x: width * 0.30, y: height * 0.25), controlPoint2: CGPoint(x: width * 0.40, y: height * 0.10))
+    arcPath.addLineToPoint(CGPoint(x: width, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height))
     arcPath.closePath()
     return arcPath
   }
   
   var arcPathComplete: UIBezierPath {
     var arcPath = UIBezierPath()
-    arcPath.moveToPoint(CGPoint(x: 0.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: -5.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: -5.0))
-    arcPath.addLineToPoint(CGPoint(x: 100.0, y: 100.0))
-    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 100.0))
+    arcPath.moveToPoint(CGPoint(x: 0.0, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: 0))
+    arcPath.addLineToPoint(CGPoint(x: width, y: 0))
+    arcPath.addLineToPoint(CGPoint(x: width, y: height))
+    arcPath.addLineToPoint(CGPoint(x: 0.0, y: height))
     arcPath.closePath()
     return arcPath
   }
   
+  // staggered animation creation
   func animate() {
     var arcAnimationPre: CABasicAnimation = CABasicAnimation(keyPath: "path")
     arcAnimationPre.fromValue = arcPathPre.CGPath

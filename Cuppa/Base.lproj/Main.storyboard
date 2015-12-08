@@ -255,17 +255,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu" customClass="CupHolderView" customModule="Cuppa" customModuleProvider="target">
-                                <rect key="frame" x="150" y="122" width="300" height="180"/>
-                                <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="gYZ-xR-LOa"/>
-                                    <constraint firstAttribute="width" constant="300" id="vUR-UK-Aip"/>
-                                </constraints>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="50" y="150" width="300" height="150"/>
-                                </variation>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-tE-Jum">
                                 <rect key="frame" x="150" y="458" width="300" height="80"/>
                                 <constraints>
@@ -286,6 +275,23 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu" customClass="CupHolderView" customModule="Cuppa" customModuleProvider="target">
+                                <rect key="frame" x="210" y="122" width="180" height="180"/>
+                                <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="arl-EF-g3G"/>
+                                    <constraint firstAttribute="height" constant="180" id="gYZ-xR-LOa"/>
+                                    <constraint firstAttribute="width" constant="300" id="vUR-UK-Aip"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vUR-UK-Aip"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="50" y="150" width="300" height="150"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -295,7 +301,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="17"/>
                             </constraint>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="T9N-ft-19i"/>
-                            <constraint firstItem="evQ-tN-fSu" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="134" id="TGV-CR-ksC">
+                            <constraint firstItem="evQ-tN-fSu" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="194" id="TGV-CR-ksC">
                                 <variation key="heightClass=regular-widthClass=compact" constant="34"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="8jA-tE-Jum" secondAttribute="trailing" constant="34" id="U2x-s6-THt"/>
@@ -304,7 +310,7 @@
                             <constraint firstItem="X7g-iT-twC" firstAttribute="top" secondItem="GGE-bR-g13" secondAttribute="bottom" constant="202" id="bbW-j9-FsJ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="244.5"/>
                             </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="evQ-tN-fSu" secondAttribute="trailing" constant="134" id="chq-rQ-V8s">
+                            <constraint firstAttribute="trailingMargin" secondItem="evQ-tN-fSu" secondAttribute="trailing" constant="194" id="chq-rQ-V8s">
                                 <variation key="heightClass=regular-widthClass=compact" constant="34"/>
                             </constraint>
                             <constraint firstItem="GGE-bR-g13" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="8" id="pwM-S9-qds"/>
