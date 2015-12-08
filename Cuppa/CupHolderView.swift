@@ -35,6 +35,10 @@ class CupHolderView : UIView {
     // sort ingredients
 //    things.sort({ return $0.number < $1.number })
     mutableIngredients.sort({ return $0.amount < $1.amount })
+//    var index = 0
+    
+//    var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "drawArchHelper", userInfo: nil, repeats: true)
+    
     var ingredientVolumeSum = 0
     var volumeRatio : CGFloat = 0.0
     for i in 0...mutableIngredients.count-1 {
@@ -42,16 +46,35 @@ class CupHolderView : UIView {
       arcLayer.fillColor = mutableIngredients[i].color().CGColor
       arcLayer.height = height// * CGFloat(ingredients[i].amount) / CGFloat(volume)
       arcLayer.width = width
-//      arcLayer.volumeRatio = volumeRatio
+      arcLayer.volumeRatio = 1.0 - volumeRatio
       layer.addSublayer(arcLayer)
       arcLayer.animate() // could take an additional argument that would determine when it stops
       // height of next gets determined by previous'
       ingredientVolumeSum += mutableIngredients[i].amount
       volumeRatio = CGFloat(ingredientVolumeSum) / CGFloat(volume)
 //      break
+//      sleep(1)
     }
     
   }
+  
+//  func drawArcHelper(timer: NSTimer) {
+//    var volumeRatio : CGFloat = 1.0
+//    var arcLayer = ArcLayer(volumeRatio: volumeRatio)
+//    arcLayer.fillColor = mutableIngredients[index].color().CGColor
+//    arcLayer.height = height// * CGFloat(ingredients[i].amount) / CGFloat(volume)
+//    arcLayer.width = width
+//    //      arcLayer.volumeRatio = volumeRatio
+//    layer.addSublayer(arcLayer)
+//    arcLayer.animate() // could take an additional argument that would determine when it stops
+//    //
+//    index += 1
+//    if index == mutableIngredients.count {
+//      timer.invalidate()
+//    }
+//  }
+  
+  
   
   
 }
