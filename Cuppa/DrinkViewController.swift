@@ -56,7 +56,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       tableView.tableFooterView = UIView()
       tableView.separatorColor = UIColor.clearColor()
       
-      cupHolderView.drawArc(cupHolderView.frame.height, width: cupHolderView.frame.width, ingredients: thisDrink.ingredients)
+      cupHolderView.drawArc(cupHolderView.frame.height, width: cupHolderView.frame.width, ingredients: thisDrink.ingredients!)
     }
 //    addCupView()
     
