@@ -27,6 +27,10 @@
 		AE0FC1F91C1645120001ACD4 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1F81C1645120001ACD4 /* DrinkViewController.swift */; };
 		AE0FC1FC1C16577F0001ACD4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1FB1C16577F0001ACD4 /* Location.swift */; };
 		AE0FC1FE1C1657B00001ACD4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC1FD1C1657B00001ACD4 /* MapViewController.swift */; };
+		AE0FC20B1C1692AA0001ACD4 /* Filter-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC2071C1692AA0001ACD4 /* Filter-50.png */; };
+		AE0FC20D1C1693020001ACD4 /* List-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20C1C1693020001ACD4 /* List-50.png */; };
+		AE0FC2101C1693480001ACD4 /* Filter-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20E1C1693480001ACD4 /* Filter-32.png */; };
+		AE0FC2111C1693480001ACD4 /* List-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20F1C1693480001ACD4 /* List-32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		AE0FC1F81C1645120001ACD4 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		AE0FC1FB1C16577F0001ACD4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		AE0FC1FD1C1657B00001ACD4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AE0FC2071C1692AA0001ACD4 /* Filter-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filter-50.png"; path = "../../../../../../Downloads/Filter-50.png"; sourceTree = "<group>"; };
+		AE0FC20C1C1693020001ACD4 /* List-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-50.png"; path = "../../../../../../Downloads/List-50.png"; sourceTree = "<group>"; };
+		AE0FC20E1C1693480001ACD4 /* Filter-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filter-32.png"; path = "../../../../../../Downloads/Filter-32.png"; sourceTree = "<group>"; };
+		AE0FC20F1C1693480001ACD4 /* List-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-32.png"; path = "../../../../../../Downloads/List-32.png"; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,6 +140,7 @@
 				AE0FC1FA1C1645660001ACD4 /* Controllers */,
 				AE0FC1C91C1639CD0001ACD4 /* Main.storyboard */,
 				AE0FC1CC1C1639CD0001ACD4 /* Images.xcassets */,
+				AE0FC2011C1691FB0001ACD4 /* Assets */,
 				AE0FC1CE1C1639CD0001ACD4 /* LaunchScreen.xib */,
 				AE0FC1C11C1639CD0001ACD4 /* Supporting Files */,
 				AE0FC1E51C163FB70001ACD4 /* SwiftyJSON.swift */,
@@ -201,6 +210,17 @@
 				AE0FC1FD1C1657B00001ACD4 /* MapViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AE0FC2011C1691FB0001ACD4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AE0FC20E1C1693480001ACD4 /* Filter-32.png */,
+				AE0FC20F1C1693480001ACD4 /* List-32.png */,
+				AE0FC20C1C1693020001ACD4 /* List-50.png */,
+				AE0FC2071C1692AA0001ACD4 /* Filter-50.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		B56B0A9C075CC9B46FA1E7B6 /* Frameworks */ = {
@@ -298,9 +318,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0FC20B1C1692AA0001ACD4 /* Filter-50.png in Resources */,
 				AE0FC1CB1C1639CD0001ACD4 /* Main.storyboard in Resources */,
+				AE0FC20D1C1693020001ACD4 /* List-50.png in Resources */,
 				AE0FC1D01C1639CD0001ACD4 /* LaunchScreen.xib in Resources */,
+				AE0FC2111C1693480001ACD4 /* List-32.png in Resources */,
 				AE0FC1E81C16403D0001ACD4 /* drinks.json in Resources */,
+				AE0FC2101C1693480001ACD4 /* Filter-32.png in Resources */,
 				AE0FC1CD1C1639CD0001ACD4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

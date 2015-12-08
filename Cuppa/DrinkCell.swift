@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
 
 class DrinkCell: UITableViewCell {
   
@@ -21,6 +22,7 @@ class DrinkCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
+    self.backgroundColor = UIColor.clearColor()
   }
   
   //  override func setSelected(selected: Bool, animated: Bool) {

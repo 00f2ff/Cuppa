@@ -83,6 +83,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
   var mainVolume : Int = 0
   var secondaryVolume : Int = 0
   
+  
   // OVERRIDES
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -96,11 +97,9 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     tableView.dataSource = self
     // remove extra lines at bottom
     tableView.tableFooterView = UIView()
-    
     tableView.backgroundColor = UIColor.clearColor()
-    
 //    let gradientColor = GradientColor(UIGradientStyle.TopToBottom, view.frame, [FlatBrownDark(), FlatWhite()])
-    tableView.separatorColor = FlatBrownDark()
+    tableView.separatorColor = UIColor.clearColor()
     self.view.backgroundColor = FlatBrownDark()
     
   } // viewDidLoad
@@ -125,6 +124,13 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     let drink = drinkResults[indexPath.row]
     // handle image later
     cell.nameLabel.text = drink.name
+//    if category == "Coffee" {
+//      cell.backgroundColor = FlatBrownDark()
+//    } else {
+//      cell.backgroundColor = FlatBrown()
+//    }
+    
+    
     return cell
   } // tableView
   
@@ -144,27 +150,42 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     }
   }
   
-  
   // FUNCTIONS
   func updateUI(category: String) {
-    // find frames
-    //var parentFrame:CGRect = self.view.frame
-    //var currentFrame:CGRect = self.mainSlider.frame
-    
     self.category = category
-    // line below throws lots of warnings
-    //    self.mainSlider.setTranslatesAutoresizingMaskIntoConstraints(true) // wat
-    //    if category == "Coffee" {
-    //      self.mainSlider.frame = CGRect(x: currentFrame.origin.x - currentFrame.size.width * 0.5, y: currentFrame.origin.y, width:currentFrame.size.width * 2, height: currentFrame.size.height)
-    //    } else {
-    //      self.mainSlider.frame = CGRect(x: currentFrame.origin.x + currentFrame.size.width * 0.25, y: currentFrame.origin.y, width:currentFrame.size.width * 0.5, height: currentFrame.size.height)
-    //    }
     self.mainLabel.text = "\(category) Volume"
-    // reset slider values (animate as well?)
-    self.mainSlider.value = 0.5
-    self.secondarySlider.value = 0.5
-    // refresh results
-    refreshOptions()
+    // reset slider values
+    UIView.animateWithDuration(0.5, animations: {
+      self.mainSlider.setValue(0.5, animated: true)
+      self.secondarySlider.setValue(0.5, animated: true)
+      if category == "Coffee" {
+        self.view.backgroundColor = FlatBrownDark()
+//        self.tableView.backgroundColor = FlatBrownDark()
+//        for i in 0...self.tableView.visibleCells().count-1 {
+//          self.tableView.visibleCells()[i].view!!.backgroundColor = FlatBrownDark()
+//        }
+//        for i in 0...self.tableView.numberOfSections()-1 {
+//          for j in 0...self.tableView.numberOfRowsInSection(i) {
+//            self.tableView.cellForRowAtIndexPath(indexpa)
+//          }
+//        }
+//        self.mainSlider.thumbTintColor = FlatBrown()
+      } else {
+        self.view.backgroundColor = FlatBrown()
+//        self.tableView.backgroundColor = FlatBrown()
+//        for i in 0...self.tableView.visibleCells().count-1 {
+//          println( self.tableView.visibleCells()[i])
+//          self.tableView.visibleCells()[i]
+//          .view!!.backgroundColor = FlatBrown()
+//        }
+//        self.mainSlider.thumbTintColor = FlatBrownDark()
+      }
+      }, completion: { (complete: Bool) in
+        self.drinkResults = []
+        self.tableView.reloadData()
+      })
+//    refreshOptions()
+    
   } // updateUI
   
   func refreshOptions() {
@@ -174,12 +195,9 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     var secondaryBool : Bool = false
     var hasSecondary : Bool = false
     for i in 0...self.drinks.count-1 {
-      // decide if drink fits filters
-      //      if self.category == self.drinks[i]["category"].string { // allowing flavored
       for (index, ingredient) in self.drinks[i]["ingredients"] {
-        // Think about potential fine-tuning / ranges
-        // check main
         if ingredient["name"].string == "Espresso" {
+          // check main
           if ingredient["amount"].int == self.mainVolume {
             mainBool = true
           }
@@ -213,11 +231,6 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     //    }
     self.tableView.reloadData()
   } // refreshOptions
-  
-  
-  
-  
-
 
 }
 
