@@ -275,8 +275,9 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu" customClass="CupHolderView" customModule="Cuppa" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu" customClass="CupHolderView" customModule="Cuppa" customModuleProvider="target">
                                 <rect key="frame" x="210" y="122" width="180" height="180"/>
+                                <color key="backgroundColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="arl-EF-g3G"/>
                                     <constraint firstAttribute="height" constant="180" id="gYZ-xR-LOa"/>

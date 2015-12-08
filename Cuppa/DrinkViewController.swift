@@ -16,7 +16,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var detailsLabel: UILabel!
-  @IBOutlet weak var cupHolderView: CupHolderView!
+  @IBOutlet weak var cupHolderView: UIView!
   //  @IBOutlet weak var cupView : UIView!
   //  @IBOutlet weak var favoriteButton : UIButton!
   
@@ -56,7 +56,11 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       tableView.tableFooterView = UIView()
       tableView.separatorColor = UIColor.clearColor()
       
-      cupHolderView.drawArc(cupHolderView.frame.height, width: cupHolderView.frame.width, ingredients: thisDrink.ingredients!)
+      self.loadCupView(thisDrink.ingredients)
+      
+      
+      
+//      cupHolderView.drawArc(cupHolderView.frame.height, width: cupHolderView.frame.width, ingredients: thisDrink.ingredients!)
     }
 //    addCupView()
     
@@ -92,11 +96,12 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       cell.ingredientLabel.text = ingredient.name
       if ingredient.amount > 0 {
         cell.amountLabel.text = "\(ingredient.amount) oz"
+        cell.circleView.color = ingredient.color()
       } else {
-        // there may not also be an image
         cell.amountLabel.text = ""
+        // no circle
       }
-      cell.circleView.color = ingredient.color()
+      
     }
     return cell
   } // tableView
@@ -116,6 +121,38 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   
   
   // FUNCTIONS
+  func loadCupView(ingredients: [Ingredient]) {
+    var x : CGFloat = 0
+//    var y : CGFloat = 0 // cupHolderView.frame.height
+    var y : CGFloat = cupHolderView.frame.height - 30
+    var height : CGFloat = cupHolderView.frame.height - 30
+    var width : CGFloat = cupHolderView.frame.width - 30
+    drawCup(height, width: width)
+    var totalVolume : CGFloat = 0
+    var mutableIngredients : [Ingredient] = []
+    for ingredient in ingredients {
+      totalVolume += CGFloat(ingredient.amount)
+      mutableIngredients.append(ingredient)
+    }
+    // sort ingredients
+    mutableIngredients.sort({ return $0.amount < $1.amount })
+    for ingredient in mutableIngredients {
+      var volumeRatio = CGFloat(ingredient.amount) / totalVolume
+      // is this relative to the bottom-left corner of cupHolderView? I think so.
+      var frame = CGRect(x: 0, y: y, width: width, height: height * volumeRatio) // origin is lower-left
+      var rect = UIView(frame: frame)
+      rect.backgroundColor = ingredient.color()
+      cupHolderView.addSubview(rect)
+      UIView.animateWithDuration(2, animations: {
+        rect.frame = CGRect(x: 0, y: y - height, width: width, height: height * volumeRatio)
+      })
+      y += height * volumeRatio
+    }
+  } // loadCupView
+  
+  func drawCup(height: CGFloat, width: CGFloat) {
+    
+  }
   
   //  func changeButtonTitle(thisDrink: Drink) {
   //    if (thisDrink.favorite != false) {

@@ -33,6 +33,7 @@
 		AE0FC2111C1693480001ACD4 /* List-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20F1C1693480001ACD4 /* List-32.png */; };
 		AE0FC2141C169A560001ACD4 /* CupHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2131C169A560001ACD4 /* CupHolderView.swift */; };
 		AE0FC2161C169AF50001ACD4 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */; };
+		AE0FC2181C16D5430001ACD4 /* IngredientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2171C16D5430001ACD4 /* IngredientLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		AE0FC20F1C1693480001ACD4 /* List-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-32.png"; path = "../../../../../../Downloads/List-32.png"; sourceTree = "<group>"; };
 		AE0FC2131C169A560001ACD4 /* CupHolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupHolderView.swift; sourceTree = "<group>"; };
 		AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
+		AE0FC2171C16D5430001ACD4 /* IngredientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientLayer.swift; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */,
+				AE0FC2171C16D5430001ACD4 /* IngredientLayer.swift */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				AE0FC2141C169A560001ACD4 /* CupHolderView.swift in Sources */,
 				AE0FC1EE1C1640760001ACD4 /* Ingredient.swift in Sources */,
 				AE0FC1F51C1640FF0001ACD4 /* DrinkCell.swift in Sources */,
+				AE0FC2181C16D5430001ACD4 /* IngredientLayer.swift in Sources */,
 				AE0FC1C41C1639CD0001ACD4 /* AppDelegate.swift in Sources */,
 				AE0FC1FE1C1657B00001ACD4 /* MapViewController.swift in Sources */,
 				AE0FC1F71C1641090001ACD4 /* IngredientCell.swift in Sources */,
