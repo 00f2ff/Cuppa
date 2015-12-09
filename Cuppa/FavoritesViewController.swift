@@ -80,6 +80,13 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
     let drink = drinks[indexPath.row]
     // handle image later
     cell.nameLabel.text = drink.name
+    if drink.category == "Coffee" {
+      cell.drinkImageView.image = UIImage(named: "Coffee-32-black.png")
+    } else if drink.category == "Espresso" {
+      cell.drinkImageView.image = UIImage(named: "Espresso-black.png")
+    } else {
+      cell.drinkImageView.image = UIImage(named: "Flavored-black.png")
+    }
     return cell
   } // tableView
   

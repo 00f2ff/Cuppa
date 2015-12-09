@@ -143,6 +143,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="drinkImageView" destination="jAi-iY-anc" id="gCu-pT-r4u"/>
                                             <outlet property="nameLabel" destination="eZQ-nx-TAS" id="Ruj-ia-2n3"/>
                                             <segue destination="009-jp-HjO" kind="show" identifier="drinkSegue" id="Kmb-yh-chQ"/>
                                         </connections>
@@ -482,7 +483,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Favorites-->
         <scene sceneID="Kgu-dj-bo0">
             <objects>
                 <viewController id="laF-do-Y7C" customClass="FavoritesViewController" customModule="Cuppa" customModuleProvider="target" sceneMemberID="viewController">
@@ -525,7 +526,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0Me-K3-hbT"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="0Me-K3-hbT"/>
                     <connections>
                         <outlet property="tableView" destination="lcj-P5-1SX" id="aCP-Bm-qn0"/>
                     </connections>
@@ -599,6 +600,6 @@
         <image name="cup.png" width="573" height="315"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kmb-yh-chQ"/>
+        <segue reference="TMX-pJ-dA0"/>
     </inferredMetricsTieBreakers>
 </document>

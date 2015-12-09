@@ -83,6 +83,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
   var drinkResults : [Drink] = []
   var mainVolume : Int = 0
   var secondaryVolume : Int = 0
+  var images: [UIImage] = [UIImage(named: "Coffee-32-white.png")!, UIImage(named: "Coffee-32-black.png")!, UIImage(named: "Espresso-white.png")!, UIImage(named: "Espresso-black.png")!, UIImage(named: "Flavored-white.png")!, UIImage(named: "Flavored-black.png")!]
   
   
   // OVERRIDES
@@ -125,11 +126,18 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     let drink = drinkResults[indexPath.row]
     // handle image later
     cell.nameLabel.text = drink.name
-//    if category == "Coffee" {
-//      cell.backgroundColor = FlatBrownDark()
-//    } else {
-//      cell.backgroundColor = FlatBrown()
-//    }
+    if drink.category == "Coffee" {
+      cell.drinkImageView.image = UIImage(named: "Coffee-32-white.png")
+    } else if drink.category == "Espresso" {
+      cell.drinkImageView.image = UIImage(named: "Espresso-white.png")
+    } else {
+      cell.drinkImageView.image = UIImage(named: "Flavored-white.png")
+    }
+    if category == "Coffee" {
+      cell.backgroundColor = FlatBrownDark()
+    } else {
+      cell.backgroundColor = FlatBrown()
+    }
     
     
     return cell
@@ -161,32 +169,13 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
       self.secondarySlider.setValue(0.5, animated: true)
       if category == "Coffee" {
         self.view.backgroundColor = FlatBrownDark()
-//        self.tableView.backgroundColor = FlatBrownDark()
-//        for i in 0...self.tableView.visibleCells().count-1 {
-//          self.tableView.visibleCells()[i].view!!.backgroundColor = FlatBrownDark()
-//        }
-//        for i in 0...self.tableView.numberOfSections()-1 {
-//          for j in 0...self.tableView.numberOfRowsInSection(i) {
-//            self.tableView.cellForRowAtIndexPath(indexpa)
-//          }
-//        }
-//        self.mainSlider.thumbTintColor = FlatBrown()
       } else {
         self.view.backgroundColor = FlatBrown()
-//        self.tableView.backgroundColor = FlatBrown()
-//        for i in 0...self.tableView.visibleCells().count-1 {
-//          println( self.tableView.visibleCells()[i])
-//          self.tableView.visibleCells()[i]
-//          .view!!.backgroundColor = FlatBrown()
-//        }
-//        self.mainSlider.thumbTintColor = FlatBrownDark()
       }
       }, completion: { (complete: Bool) in
         self.drinkResults = []
         self.tableView.reloadData()
       })
-//    refreshOptions()
-    
   } // updateUI
   
   func refreshOptions() {
