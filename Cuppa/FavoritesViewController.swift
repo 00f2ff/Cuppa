@@ -41,11 +41,10 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
     tableView.separatorColor = UIColor.clearColor()
   }
   
-//  override func viewWillAppear(animated: Bool) {
-//    favorites = []
-//    loadData()
-//    super.viewWillAppear(false)
-//  }
+  override func viewWillAppear(animated: Bool) {
+    loadData()
+    super.viewWillAppear(false)
+  }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -55,7 +54,7 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   
   // DELEGATION
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
+    return 1 // could be used for better sorting in list
   } // numberOfSectionsInTableView
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,6 +100,7 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   }
   
   func convertToDrinks(jsonDrinks: JSON) {
+    drinks = []
     var ingredients : [Ingredient] = []
     for i in 0...jsonDrinks.count-1 {
       // check favorite status
