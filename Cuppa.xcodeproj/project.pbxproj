@@ -40,6 +40,8 @@
 		AE0FC22A1C1892380001ACD4 /* Espresso-white.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC2291C1892380001ACD4 /* Espresso-white.png */; };
 		AE0FC22D1C18933B0001ACD4 /* Flavored-white.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC22B1C18933B0001ACD4 /* Flavored-white.png */; };
 		AE0FC22E1C18933B0001ACD4 /* Flavored-black.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC22C1C18933B0001ACD4 /* Flavored-black.png */; };
+		AE0FC2311C189FDC0001ACD4 /* Hearts-Filled-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC22F1C189FDC0001ACD4 /* Hearts-Filled-32.png */; };
+		AE0FC2321C189FDC0001ACD4 /* Hearts-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC2301C189FDC0001ACD4 /* Hearts-32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		AE0FC2291C1892380001ACD4 /* Espresso-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Espresso-white.png"; path = "../../../../../../Downloads/Espresso-white.png"; sourceTree = "<group>"; };
 		AE0FC22B1C18933B0001ACD4 /* Flavored-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Flavored-white.png"; path = "../../../../../../Downloads/Flavored-white.png"; sourceTree = "<group>"; };
 		AE0FC22C1C18933B0001ACD4 /* Flavored-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Flavored-black.png"; path = "../../../../../../Downloads/Flavored-black.png"; sourceTree = "<group>"; };
+		AE0FC22F1C189FDC0001ACD4 /* Hearts-Filled-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hearts-Filled-32.png"; path = "../../../../../../Downloads/Hearts-Filled-32.png"; sourceTree = "<group>"; };
+		AE0FC2301C189FDC0001ACD4 /* Hearts-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hearts-32.png"; path = "../../../../../../Downloads/Hearts-32.png"; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,6 +237,8 @@
 		AE0FC2011C1691FB0001ACD4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				AE0FC22F1C189FDC0001ACD4 /* Hearts-Filled-32.png */,
+				AE0FC2301C189FDC0001ACD4 /* Hearts-32.png */,
 				AE0FC22B1C18933B0001ACD4 /* Flavored-white.png */,
 				AE0FC22C1C18933B0001ACD4 /* Flavored-black.png */,
 				AE0FC2291C1892380001ACD4 /* Espresso-white.png */,
@@ -356,6 +362,7 @@
 				AE0FC22E1C18933B0001ACD4 /* Flavored-black.png in Resources */,
 				AE0FC2261C1890600001ACD4 /* Espresso-black.png in Resources */,
 				AE0FC21C1C17E6490001ACD4 /* cup.png in Resources */,
+				AE0FC2321C189FDC0001ACD4 /* Hearts-32.png in Resources */,
 				AE0FC20B1C1692AA0001ACD4 /* Filter-50.png in Resources */,
 				AE0FC1CB1C1639CD0001ACD4 /* Main.storyboard in Resources */,
 				AE0FC20D1C1693020001ACD4 /* List-50.png in Resources */,
@@ -368,6 +375,7 @@
 				AE0FC22A1C1892380001ACD4 /* Espresso-white.png in Resources */,
 				AE0FC2101C1693480001ACD4 /* Filter-32.png in Resources */,
 				AE0FC2241C1813C70001ACD4 /* Coffee-32-black.png in Resources */,
+				AE0FC2311C189FDC0001ACD4 /* Hearts-Filled-32.png in Resources */,
 				AE0FC2281C1891A00001ACD4 /* Coffee-32-white.png in Resources */,
 				AE0FC1CD1C1639CD0001ACD4 /* Images.xcassets in Resources */,
 			);

@@ -208,13 +208,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGE-bR-g13">
-                                <rect key="frame" x="255" y="72" width="90.5" height="20.5"/>
+                                <rect key="frame" x="255" y="72" width="90.5" height="62.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="X7g-iT-twC">
-                                <rect key="frame" x="150" y="294" width="300" height="150"/>
+                                <rect key="frame" x="150" y="336" width="300" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="1zA-up-CQg"/>
@@ -273,28 +273,14 @@
                                 </variation>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup.png" translatesAutoresizingMaskIntoConstraints="NO" id="Scp-Nr-yKX">
-                                <rect key="frame" x="226" y="149" width="191" height="104"/>
+                                <rect key="frame" x="226" y="191" width="191" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="191" id="87k-Wh-7Er"/>
                                     <constraint firstAttribute="height" constant="104" id="Mi7-UE-rvs"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu" customClass="CupHolderView" customModule="Cuppa" customModuleProvider="target">
-                                <rect key="frame" x="230" y="150" width="140" height="100"/>
-                                <color key="backgroundColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="arl-EF-g3G"/>
-                                    <constraint firstAttribute="height" constant="100" id="gYZ-xR-LOa"/>
-                                    <constraint firstAttribute="width" constant="300" id="vUR-UK-Aip"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="vUR-UK-Aip"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-tE-Jum">
-                                <rect key="frame" x="150" y="458" width="300" height="80"/>
+                                <rect key="frame" x="150" y="500" width="300" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="T4f-su-fdp"/>
                                     <constraint firstAttribute="height" constant="80" id="vbF-1j-qDx"/>
@@ -314,15 +300,33 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9O-8f-DOc">
-                                <rect key="frame" x="360" y="68" width="90" height="30"/>
-                                <state key="normal" title="Favorite">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9O-8f-DOc">
+                                <rect key="frame" x="381" y="92" width="25" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="8AD-j1-dHA"/>
+                                    <constraint firstAttribute="width" constant="25" id="kCH-ZX-GE6"/>
+                                </constraints>
+                                <state key="normal" image="Hearts-32.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="favoriteStatusHasChanged:" destination="009-jp-HjO" eventType="touchUpInside" id="q5Z-zG-q0P"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-tN-fSu" customClass="CupHolderView" customModule="Cuppa" customModuleProvider="target">
+                                <rect key="frame" x="230" y="192" width="140" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="arl-EF-g3G"/>
+                                    <constraint firstAttribute="height" constant="100" id="gYZ-xR-LOa"/>
+                                    <constraint firstAttribute="width" constant="300" id="vUR-UK-Aip"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vUR-UK-Aip"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -334,7 +338,7 @@
                             <constraint firstItem="Scp-Nr-yKX" firstAttribute="top" secondItem="GGE-bR-g13" secondAttribute="bottom" constant="56.5" id="69q-X0-qMr">
                                 <variation key="heightClass=regular-widthClass=compact" constant="43.5"/>
                             </constraint>
-                            <constraint firstItem="C9O-8f-DOc" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="4" id="70q-9v-GD3"/>
+                            <constraint firstItem="C9O-8f-DOc" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="28" id="70q-9v-GD3"/>
                             <constraint firstItem="X7g-iT-twC" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="8sZ-01-v7d"/>
                             <constraint firstAttribute="centerX" secondItem="X7g-iT-twC" secondAttribute="centerX" id="9sn-ch-Tk2"/>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="top" secondItem="X7g-iT-twC" secondAttribute="bottom" constant="30" id="Ick-K1-I1e">
@@ -344,7 +348,7 @@
                             <constraint firstItem="Scp-Nr-yKX" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="210" id="KPU-SC-0Rm">
                                 <variation key="heightClass=regular-widthClass=compact" constant="71"/>
                             </constraint>
-                            <constraint firstItem="C9O-8f-DOc" firstAttribute="leading" secondItem="GGE-bR-g13" secondAttribute="trailing" constant="14.5" id="R1f-Px-7YS"/>
+                            <constraint firstItem="C9O-8f-DOc" firstAttribute="leading" secondItem="GGE-bR-g13" secondAttribute="trailing" constant="35.5" id="R1f-Px-7YS"/>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="T9N-ft-19i"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8jA-tE-Jum" secondAttribute="trailing" constant="34" id="U2x-s6-THt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X7g-iT-twC" secondAttribute="trailing" constant="34" id="UVK-iz-sA6"/>
@@ -352,8 +356,8 @@
                             <constraint firstItem="X7g-iT-twC" firstAttribute="top" secondItem="GGE-bR-g13" secondAttribute="bottom" constant="202" id="bbW-j9-FsJ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="198.5"/>
                             </constraint>
-                            <constraint firstItem="evQ-tN-fSu" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="86" id="dWm-Mv-DWI">
-                                <variation key="heightClass=regular-widthClass=compact" constant="73"/>
+                            <constraint firstItem="evQ-tN-fSu" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="128" id="dWm-Mv-DWI">
+                                <variation key="heightClass=regular-widthClass=compact" constant="114"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="8jA-tE-Jum" secondAttribute="trailing" constant="134" id="ioe-oT-4Jj"/>
                             <constraint firstItem="X7g-iT-twC" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="k2U-61-yyQ"/>
@@ -596,6 +600,7 @@
     <resources>
         <image name="Coffee-32-white.png" width="96" height="96"/>
         <image name="Filter-25.png" width="25" height="25"/>
+        <image name="Hearts-32.png" width="78" height="72"/>
         <image name="List-25.png" width="25" height="25"/>
         <image name="cup.png" width="573" height="315"/>
     </resources>

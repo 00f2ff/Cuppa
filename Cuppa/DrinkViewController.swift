@@ -25,7 +25,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   @IBAction func favoriteStatusHasChanged(sender: UIButton) {
     if let thisDrink = drink {
       // change favorite status
-      thisDrink.favorite = !thisDrink.favorite
+//      thisDrink.favorite = !thisDrink.favorite
       // update UI
       favorite(thisDrink)
       // save data
@@ -38,6 +38,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   var thisDrink : Drink!
   let dataManager = DataManager()
   var favorites = [String]()
+  var favoriteButtonImageName = "Hearts-32.png"
   
   
   // OVERRIDES
@@ -52,9 +53,9 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       
       favorites = dataManager.favorites
       if contains(favorites, thisDrink.name) {
-        favoriteButton.setTitle("Unfavorite", forState: .Normal)
+        setButtonImage("Hearts-Filled-32.png")
       } else {
-        favoriteButton.setTitle("Favorite", forState: .Normal)
+        setButtonImage("Hearts-32.png")
       }
       
       tableView.delegate = self
@@ -80,9 +81,9 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
     // below is repeated code
     if let thisDrink = drink {
       if contains(favorites, thisDrink.name) {
-        favoriteButton.setTitle("Unfavorite", forState: .Normal)
+        setButtonImage("Hearts-Filled-32.png")
       } else {
-        favoriteButton.setTitle("Favorite", forState: .Normal)
+        setButtonImage("Hearts-32.png")
       }
       
     }
@@ -168,19 +169,25 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   } // loadCupView
   
   func favorite(thisDrink: Drink) { // since I'm not updating the actual JSON, this uses a different check
-    if favoriteButton.titleLabel!.text == "Favorite" { // meaning user just clicked 'favorite'
+    println(favoriteButtonImageName)
+    if favoriteButtonImageName == "Hearts-32.png" { // meaning user just clicked 'favorite'
       // check it doesn't already exist (just in case)
       if (find(favorites, thisDrink.name) == nil) {
         favorites.append(thisDrink.name)
-        favoriteButton.setTitle("Unfavorite", forState: .Normal)
+        setButtonImage("Hearts-Filled-32.png")
       }
       
     } else {
       favorites.removeAtIndex(find(favorites, thisDrink.name)!)
-      favoriteButton.setTitle("Favorite", forState: .Normal)
+      setButtonImage("Hearts-32.png")
     }
     dataManager.favorites = favorites
     dataManager.saveFavorites()
+  }
+  
+  func setButtonImage(imageName: String) {
+    favoriteButtonImageName = imageName
+    favoriteButton.setImage(UIImage(named: imageName)!,forState:UIControlState.Normal)
   }
   
 }
