@@ -17,11 +17,8 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var detailsLabel: UILabel!
   @IBOutlet weak var cupHolderView: UIView!
-  //  @IBOutlet weak var cupView : UIView!
   //  @IBOutlet weak var favoriteButton : UIButton!
-  
-  
-//  @IBOutlet weak var cupBorderView: UIView!
+
   
   // ACTIONS
 //  @IBAction func favoriteStatusHasChanged(sender: UIButton) {
@@ -36,10 +33,8 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   
   
   // VARIABLES
-//  var cupView = CupView(frame: CGRectZero)
   var drink: Drink?
   var thisDrink : Drink!
-//  var cupHolderView = CupHolderView(frame: CGRectZero)
   
   
   // OVERRIDES
@@ -57,39 +52,14 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       tableView.tableFooterView = UIView()
       tableView.separatorColor = UIColor.clearColor()
       cupHolderView.backgroundColor = UIColor.clearColor()
-      
-//      cupHolderView.layer.cornerRadius = 80
-//      cupHolderView.layer.borderColor = UIColor.blackColor().CGColor
-//      cupHolderView.layer.borderWidth = 5.0
-      
+      // mask view to be curved
       var maskPath = UIBezierPath(roundedRect: cupHolderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 40.0, height: 40.0))
-//      maskPath.addClip()
-//      UIColor.blackColor().setStroke()
-//      maskPath.lineWidth = 5.0
-//      maskPath.stroke()
       let maskLayer = CAShapeLayer()
       maskLayer.path = maskPath.CGPath
       cupHolderView.layer.mask = maskLayer
-//      cupHolderView.layer.borderColor = UIColor.blackColor().CGColor
-//      cupHolderView.layer.borderWidth = 5.0
-//      var maskPath2 = UIBezierPath(roundedRect: cupBorderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 45.0, height: 45.0))
-//      let maskLayer2 = CAShapeLayer()
-//      maskLayer2.path = maskPath2.CGPath
-//      
-//      cupBorderView.layer.mask = maskLayer2
-//      cupHolderView.layer.addSublayer(maskLayer)
-      
       
       self.loadCupView(thisDrink.ingredients)
-      
-      
-      
-//      cupHolderView.drawArc(cupHolderView.frame.height, width: cupHolderView.frame.width, ingredients: thisDrink.ingredients!)
     }
-//    addCupView()
-    
-    
-//    cupHolderView.drawArc(FlatCoffee().CGColor, height: cupHolderView.frame.height, width: cupHolderView.frame.width, beginTime: 1.0)
   } // viewDidLoad
   
   override func didReceiveMemoryWarning() {
@@ -130,28 +100,24 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
     return cell
   } // tableView
   
-  
-  
-  
-  
-  
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   } // tableView
+  
+  func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return false
+  }
   
   
   // SEGUES
   
   
-  
   // FUNCTIONS
   func loadCupView(ingredients: [Ingredient]) {
     var x : CGFloat = 0
-//    var y : CGFloat = 0 // cupHolderView.frame.height
     var y : CGFloat = cupHolderView.frame.height
     var height : CGFloat = cupHolderView.frame.height
     var width : CGFloat = cupHolderView.frame.width + 20 // overshoots but that's fine
-//    drawCup(height, width: width)
     var totalVolume : CGFloat = 0
     var mutableIngredients : [Ingredient] = []
     for ingredient in ingredients {
@@ -174,13 +140,6 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
     }
   } // loadCupView
   
-  func drawCup(height: CGFloat, width: CGFloat) {
-    var rectangleLayer = RectangleLayer()
-    cupHolderView.layer.addSublayer(rectangleLayer)
-//    rectangleLayer.animateStrokeWithColor(UIColor.redColor())
-    rectangleLayer.draw()
-  }
-  
   //  func changeButtonTitle(thisDrink: Drink) {
   //    if (thisDrink.favorite != false) {
   //      favoriteButton.setTitle("Unfavorite", forState: .Normal)
@@ -188,14 +147,5 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   //      favoriteButton.setTitle("Favorite", forState: .Normal)
   //    }
   //  }
-  
-//  func addCupView() {
-//    let boxSize: CGFloat = 100.0
-//    cupView.frame = CGRect(x: view.bounds.width / 2 - boxSize / 2,
-//      y: view.bounds.height / 2 - boxSize / 2,
-//      width: boxSize,
-//      height: boxSize)
-//    view.addSubview(cupView)
-//  } // addCupView
   
 }

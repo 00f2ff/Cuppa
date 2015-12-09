@@ -11,6 +11,21 @@ import UIKit
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var sortButton: UIBarButtonItem!
+  
+  
+  @IBAction func changeSort(sender: UIBarButtonItem) {
+    if sortButton.title == "Category" {
+      sortButton.title = "A-Z"
+      // sort drinks by category
+    } else {
+      sortButton.title = "Category"
+      // sort drinks alphabetically
+    }
+  }
+  
+  
+  
   
   let textCellIdentifier = "DrinkCell"
   var drinks : [Drink] = []
@@ -24,6 +39,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     DataManager.getDrinkDataWithSuccess { (data) -> Void in
       let json = JSON(data: data)
       self.convertToDrinks(json["drinks"])
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tableView.reloadData()
+      }
     }
     
     tableView.delegate = self
@@ -40,7 +58,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
   
   // DELEGATION
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1 // init as 0?
+    return 1
   } // numberOfSectionsInTableView
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,10 +96,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
       for (index, ingredient) in jsonDrinks[i]["ingredients"] {
         ingredients.append(Ingredient(name: ingredient["name"].string!, amount: ingredient["amount"].int!))
       }
-      self.drinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
+      drinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
       // reset ingredients
       ingredients = []
     }
+    self.tableView.reloadData()
   }
 
 
