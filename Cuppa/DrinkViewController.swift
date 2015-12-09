@@ -21,7 +21,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   //  @IBOutlet weak var favoriteButton : UIButton!
   
   
-  @IBOutlet weak var cupBorderView: UIView!
+//  @IBOutlet weak var cupBorderView: UIView!
   
   // ACTIONS
 //  @IBAction func favoriteStatusHasChanged(sender: UIButton) {
@@ -69,13 +69,14 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
 //      maskPath.stroke()
       let maskLayer = CAShapeLayer()
       maskLayer.path = maskPath.CGPath
+      cupHolderView.layer.mask = maskLayer
 //      cupHolderView.layer.borderColor = UIColor.blackColor().CGColor
 //      cupHolderView.layer.borderWidth = 5.0
-      var maskPath2 = UIBezierPath(roundedRect: cupBorderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 45.0, height: 45.0))
-      let maskLayer2 = CAShapeLayer()
-      maskLayer2.path = maskPath2.CGPath
-      cupHolderView.layer.mask = maskLayer
-      cupBorderView.layer.mask = maskLayer2
+//      var maskPath2 = UIBezierPath(roundedRect: cupBorderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 45.0, height: 45.0))
+//      let maskLayer2 = CAShapeLayer()
+//      maskLayer2.path = maskPath2.CGPath
+//      
+//      cupBorderView.layer.mask = maskLayer2
 //      cupHolderView.layer.addSublayer(maskLayer)
       
       
