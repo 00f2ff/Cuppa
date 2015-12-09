@@ -23,20 +23,16 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   var favorites = [String]()
   let textCellIdentifier = "DrinkCell"
   var drinks : [Drink] = []
+  let dataManager = DataManager()
   
   
   // OVERRIDES
   override func viewDidLoad() {
     super.viewDidLoad()
+    println("favorites")
     // Do any additional setup after loading the view, typically from a nib.
     // preload JSON to speed up refreshOptions()
-    DataManager.getDrinkDataWithSuccess { (data) -> Void in
-      let json = JSON(data: data)
-      self.convertToDrinks(json["drinks"]) // this method only adds favorited drinks to self.drinks
-      dispatch_async(dispatch_get_main_queue()) {
-        self.tableView.reloadData()
-      }
-    }
+    loadData()
     
     tableView.delegate = self
     tableView.dataSource = self
@@ -44,6 +40,12 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
     tableView.tableFooterView = UIView()
     tableView.separatorColor = UIColor.clearColor()
   }
+  
+//  override func viewWillAppear(animated: Bool) {
+//    favorites = []
+//    loadData()
+//    super.viewWillAppear(false)
+//  }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -75,7 +77,7 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   
   // SEGUES
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "drinkSegueFromList" {
+    if segue.identifier == "drinkSegueFromFavorites" {
       let dvc : DrinkViewController = segue.destinationViewController as! DrinkViewController
       let cell = sender as! DrinkCell
       let row = tableView.indexPathForCell(cell)!.row
@@ -86,15 +88,30 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   
   
   // FUNCTIONS
+  func loadData() {
+    DataManager.getDrinkDataWithSuccess { (data) -> Void in
+      let json = JSON(data: data)
+      self.dataManager.loadFavorites()
+      self.favorites = self.dataManager.favorites
+      self.convertToDrinks(json["drinks"]) // this method only adds favorited drinks to self.drinks
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
   func convertToDrinks(jsonDrinks: JSON) {
     var ingredients : [Ingredient] = []
     for i in 0...jsonDrinks.count-1 {
-      for (index, ingredient) in jsonDrinks[i]["ingredients"] {
-        ingredients.append(Ingredient(name: ingredient["name"].string!, amount: ingredient["amount"].int!))
+      // check favorite status
+      if contains(favorites, jsonDrinks[i]["name"].string!) {
+        for (index, ingredient) in jsonDrinks[i]["ingredients"] {
+          ingredients.append(Ingredient(name: ingredient["name"].string!, amount: ingredient["amount"].int!))
+        }
+        drinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
+        // reset ingredients
+        ingredients = []
       }
-      drinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
-      // reset ingredients
-      ingredients = []
     }
     // alphabetize
     drinks.sort({ return $0.name < $1.name })

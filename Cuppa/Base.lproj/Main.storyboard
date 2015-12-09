@@ -228,7 +228,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiw-22-waJ">
-                                                    <rect key="frame" x="227" y="5" width="60" height="21"/>
+                                                    <rect key="frame" x="37" y="4" width="40" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -237,7 +237,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svd-02-Kgm">
-                                                    <rect key="frame" x="45" y="5" width="155" height="21"/>
+                                                    <rect key="frame" x="78" y="4" width="155" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -307,6 +307,18 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9O-8f-DOc">
+                                <rect key="frame" x="360" y="68" width="90" height="30"/>
+                                <state key="normal" title="Favorite">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="261" y="68" width="81" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="favoriteStatusHasChanged:" destination="009-jp-HjO" eventType="touchUpInside" id="q5Z-zG-q0P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -318,14 +330,17 @@
                             <constraint firstItem="Scp-Nr-yKX" firstAttribute="top" secondItem="GGE-bR-g13" secondAttribute="bottom" constant="56.5" id="69q-X0-qMr">
                                 <variation key="heightClass=regular-widthClass=compact" constant="43.5"/>
                             </constraint>
+                            <constraint firstItem="C9O-8f-DOc" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="4" id="70q-9v-GD3"/>
                             <constraint firstItem="X7g-iT-twC" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="8sZ-01-v7d"/>
                             <constraint firstAttribute="centerX" secondItem="X7g-iT-twC" secondAttribute="centerX" id="9sn-ch-Tk2"/>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="top" secondItem="X7g-iT-twC" secondAttribute="bottom" constant="30" id="Ick-K1-I1e">
                                 <variation key="heightClass=regular-widthClass=compact" constant="17"/>
                             </constraint>
+                            <constraint firstItem="C9O-8f-DOc" firstAttribute="centerY" secondItem="GGE-bR-g13" secondAttribute="centerY" constant="0.75" id="Joa-ch-B2B"/>
                             <constraint firstItem="Scp-Nr-yKX" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="210" id="KPU-SC-0Rm">
                                 <variation key="heightClass=regular-widthClass=compact" constant="71"/>
                             </constraint>
+                            <constraint firstItem="C9O-8f-DOc" firstAttribute="leading" secondItem="GGE-bR-g13" secondAttribute="trailing" constant="14.5" id="R1f-Px-7YS"/>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="T9N-ft-19i"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8jA-tE-Jum" secondAttribute="trailing" constant="34" id="U2x-s6-THt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X7g-iT-twC" secondAttribute="trailing" constant="34" id="UVK-iz-sA6"/>
@@ -376,6 +391,7 @@
                     <connections>
                         <outlet property="cupHolderView" destination="evQ-tN-fSu" id="Fvf-rt-Lgj"/>
                         <outlet property="detailsLabel" destination="8jA-tE-Jum" id="E4J-Ni-z1b"/>
+                        <outlet property="favoriteButton" destination="C9O-8f-DOc" id="kkA-ig-pwt"/>
                         <outlet property="nameLabel" destination="GGE-bR-g13" id="O1C-H6-72E"/>
                         <outlet property="tableView" destination="X7g-iT-twC" id="ke4-oI-aad"/>
                     </connections>
@@ -411,9 +427,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZ8-NR-lkb">
+                                                    <rect key="frame" x="17" y="11" width="27" height="22"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="drinkImageView" destination="VZ8-NR-lkb" id="sXa-H3-JdU"/>
                                             <outlet property="nameLabel" destination="vxf-ie-sGK" id="Lvj-bu-4DN"/>
                                             <segue destination="009-jp-HjO" kind="show" identifier="drinkSegueFromList" id="dFp-yR-CHa"/>
                                         </connections>
@@ -470,13 +490,46 @@
                     <view key="view" contentMode="scaleToFill" id="mQJ-1h-DAN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-P5-1SX">
+                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrinkCell" id="L0l-SD-VnK" customClass="DrinkCell" customModule="Cuppa" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L0l-SD-VnK" id="y4q-DP-MGS">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorite Drink Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-Zb-SZi">
+                                                    <rect key="frame" x="65" y="11" width="293" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzZ-tx-t4g">
+                                                    <rect key="frame" x="18" y="11" width="29" height="22"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="drinkImageView" destination="bzZ-tx-t4g" id="Vt1-5R-Aql"/>
+                                            <outlet property="nameLabel" destination="Ttg-Zb-SZi" id="fh6-8h-hLe"/>
+                                            <segue destination="009-jp-HjO" kind="show" identifier="drinkSegueFromFavorites" id="TMX-pJ-dA0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Me-K3-hbT"/>
+                    <connections>
+                        <outlet property="tableView" destination="lcj-P5-1SX" id="aCP-Bm-qn0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGm-Q4-zb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="0.0"/>
+            <point key="canvasLocation" x="1569" y="0.0"/>
         </scene>
         <!--Filter-->
         <scene sceneID="sEE-Ql-IQv">
@@ -542,6 +595,6 @@
         <image name="cup.png" width="573" height="315"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dFp-yR-CHa"/>
+        <segue reference="TMX-pJ-dA0"/>
     </inferredMetricsTieBreakers>
 </document>

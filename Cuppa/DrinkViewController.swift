@@ -17,24 +17,27 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var detailsLabel: UILabel!
   @IBOutlet weak var cupHolderView: UIView!
+  @IBOutlet weak var favoriteButton: UIButton!
   //  @IBOutlet weak var favoriteButton : UIButton!
 
   
   // ACTIONS
-//  @IBAction func favoriteStatusHasChanged(sender: UIButton) {
-//    if let thisDrink = drink {
-//      // change favorite status
-//      thisDrink.favorite = !thisDrink.favorite
-//      // update UI
-//      changeButtonTitle(thisDrink)
-//      // save data
-//    }
-//  }
+  @IBAction func favoriteStatusHasChanged(sender: UIButton) {
+    if let thisDrink = drink {
+      // change favorite status
+      thisDrink.favorite = !thisDrink.favorite
+      // update UI
+      favorite(thisDrink)
+      // save data
+    }
+  }
   
   
   // VARIABLES
   var drink: Drink?
   var thisDrink : Drink!
+  let dataManager = DataManager()
+  var favorites = [String]()
   
   
   // OVERRIDES
@@ -46,11 +49,20 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       println(thisDrink.name)
       nameLabel.text = thisDrink.name
       detailsLabel.text = thisDrink.details
+      
+      favorites = dataManager.favorites
+      if contains(favorites, thisDrink.name) {
+        favoriteButton.setTitle("Unfavorite", forState: .Normal)
+      } else {
+        favoriteButton.setTitle("Favorite", forState: .Normal)
+      }
+      
       tableView.delegate = self
       tableView.dataSource = self
       // remove extra lines at bottom
       tableView.tableFooterView = UIView()
       tableView.separatorColor = UIColor.clearColor()
+      
       cupHolderView.backgroundColor = UIColor.clearColor()
       // mask view to be curved
       var maskPath = UIBezierPath(roundedRect: cupHolderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 40.0, height: 40.0))
@@ -140,12 +152,20 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
     }
   } // loadCupView
   
-  //  func changeButtonTitle(thisDrink: Drink) {
-  //    if (thisDrink.favorite != false) {
-  //      favoriteButton.setTitle("Unfavorite", forState: .Normal)
-  //    } else {
-  //      favoriteButton.setTitle("Favorite", forState: .Normal)
-  //    }
-  //  }
+  func favorite(thisDrink: Drink) { // since I'm not updating the actual JSON, this uses a different check
+    if favoriteButton.titleLabel!.text == "Favorite" { // meaning user just clicked 'favorite'
+      // check it doesn't already exist (just in case)
+      if (find(favorites, thisDrink.name) == nil) {
+        favorites.append(thisDrink.name)
+        favoriteButton.setTitle("Unfavorite", forState: .Normal)
+      }
+      
+    } else {
+      favorites.removeAtIndex(find(favorites, thisDrink.name)!)
+      favoriteButton.setTitle("Favorite", forState: .Normal)
+    }
+    dataManager.favorites = favorites
+    dataManager.saveFavorites()
+  }
   
 }
