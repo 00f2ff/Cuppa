@@ -4,7 +4,7 @@
 //
 //  Created by Duncan McIsaac on 12/7/15.
 //  Copyright (c) 2015 Duncan McIsaac. All rights reserved.
-//  Icons courtesy of https://icons8.com/
+//  Icons courtesy of https://icons8.com/ and https://thenounproject.com
 //
 
 import UIKit

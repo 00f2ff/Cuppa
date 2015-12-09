@@ -85,8 +85,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rcg-Hu-tRF" id="sdh-GY-0KU">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coffee-32-white.png" translatesAutoresizingMaskIntoConstraints="NO" id="jAi-iY-anc">
+                                                    <rect key="frame" x="13" y="4" width="20" height="21"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZQ-nx-TAS">
-                                                    <rect key="frame" x="73" y="4" width="42" height="21"/>
+                                                    <rect key="frame" x="73" y="4" width="64" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="209" id="2FE-Vp-ksW"/>
                                                         <constraint firstAttribute="width" constant="200" id="FHn-4h-22h">
@@ -113,6 +116,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="eZQ-nx-TAS" secondAttribute="centerY" constant="0.25" id="FBu-D0-U16"/>
                                                 <constraint firstAttribute="centerX" secondItem="eZQ-nx-TAS" secondAttribute="centerX" constant="-0.5" id="FFx-dx-p8c"/>
+                                                <constraint firstItem="eZQ-nx-TAS" firstAttribute="leading" secondItem="sdh-GY-0KU" secondAttribute="leadingMargin" constant="65" id="VkX-DF-1Wl">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="38"/>
+                                                </constraint>
                                                 <constraint firstItem="eZQ-nx-TAS" firstAttribute="leading" secondItem="sdh-GY-0KU" secondAttribute="leadingMargin" constant="16" id="WCm-KW-eao"/>
                                                 <constraint firstAttribute="centerY" secondItem="eZQ-nx-TAS" secondAttribute="centerY" constant="1.25" id="Wct-9U-zl5">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="0.25"/>
@@ -130,7 +136,7 @@
                                                 <mask key="constraints">
                                                     <include reference="FBu-D0-U16"/>
                                                     <exclude reference="FFx-dx-p8c"/>
-                                                    <include reference="WCm-KW-eao"/>
+                                                    <exclude reference="WCm-KW-eao"/>
                                                     <exclude reference="Wct-9U-zl5"/>
                                                 </mask>
                                             </variation>
@@ -312,9 +318,6 @@
                                 <state key="normal" title="Favorite">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="261" y="68" width="81" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="favoriteStatusHasChanged:" destination="009-jp-HjO" eventType="touchUpInside" id="q5Z-zG-q0P"/>
                                 </connections>
@@ -590,11 +593,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Coffee-32-white.png" width="96" height="96"/>
         <image name="Filter-25.png" width="25" height="25"/>
         <image name="List-25.png" width="25" height="25"/>
         <image name="cup.png" width="573" height="315"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TMX-pJ-dA0"/>
+        <segue reference="Kmb-yh-chQ"/>
     </inferredMetricsTieBreakers>
 </document>
