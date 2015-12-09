@@ -23,6 +23,7 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   var favorites = [String]()
   let textCellIdentifier = "DrinkCell"
   var drinks : [Drink] = []
+  var allDrinks : [Drink] = []
   let dataManager = DataManager()
   
   
@@ -31,8 +32,16 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
     super.viewDidLoad()
     println("favorites")
     // Do any additional setup after loading the view, typically from a nib.
-    // preload JSON to speed up refreshOptions()
-    loadData()
+    DataManager.getDrinkDataWithSuccess { (data) -> Void in
+      self.dataManager.loadFavorites()
+      self.favorites = self.dataManager.favorites
+      let json = JSON(data: data)
+      self.convertToDrinks(json["drinks"])
+      self.selectFavorites()
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tableView.reloadData()
+      }
+    }
     
     tableView.delegate = self
     tableView.dataSource = self
@@ -42,7 +51,12 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   }
   
   override func viewWillAppear(animated: Bool) {
-    loadData()
+    self.dataManager.loadFavorites()
+    self.favorites = self.dataManager.favorites
+    self.selectFavorites()
+    dispatch_async(dispatch_get_main_queue()) {
+      self.tableView.reloadData()
+    }
     super.viewWillAppear(false)
   }
   
@@ -88,35 +102,46 @@ class FavoritesViewController : UIViewController, UITableViewDataSource, UITable
   
   // FUNCTIONS
   func loadData() {
-    DataManager.getDrinkDataWithSuccess { (data) -> Void in
-      let json = JSON(data: data)
-      self.dataManager.loadFavorites()
-      self.favorites = self.dataManager.favorites
-      self.convertToDrinks(json["drinks"]) // this method only adds favorited drinks to self.drinks
-      dispatch_async(dispatch_get_main_queue()) {
-        self.tableView.reloadData()
-      }
-    }
+//    DataManager.getDrinkDataWithSuccess { (data) -> Void in
+//      let json = JSON(data: data)
+//      self.dataManager.loadFavorites()
+//      self.favorites = self.dataManager.favorites
+//      self.convertToDrinks(json["drinks"])
+//      self.selectFavorites()
+//      dispatch_async(dispatch_get_main_queue()) {
+//        self.tableView.reloadData()
+//      }
+//    }
   }
   
   func convertToDrinks(jsonDrinks: JSON) {
-    drinks = []
     var ingredients : [Ingredient] = []
     for i in 0...jsonDrinks.count-1 {
-      // check favorite status
-      if contains(favorites, jsonDrinks[i]["name"].string!) {
-        for (index, ingredient) in jsonDrinks[i]["ingredients"] {
-          ingredients.append(Ingredient(name: ingredient["name"].string!, amount: ingredient["amount"].int!))
-        }
-        drinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
-        // reset ingredients
-        ingredients = []
+      for (index, ingredient) in jsonDrinks[i]["ingredients"] {
+        ingredients.append(Ingredient(name: ingredient["name"].string!, amount: ingredient["amount"].int!))
       }
+      allDrinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
+      // reset ingredients
+      ingredients = []
     }
     // alphabetize
+//    allDrinks.sort({ return $0.name < $1.name })
+//    self.tableView.reloadData()
+  }
+  
+  func selectFavorites() {
+    // reset drinks
+    drinks = []
+    for drink in allDrinks {
+      if contains(favorites, drink.name) {
+        drinks.append(drink)
+      }
+    }
     drinks.sort({ return $0.name < $1.name })
     self.tableView.reloadData()
   }
+  
+
 
   
   

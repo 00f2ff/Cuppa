@@ -74,6 +74,21 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
     }
   } // viewDidLoad
   
+  override func viewWillAppear(animated: Bool) {
+    self.dataManager.loadFavorites()
+    self.favorites = self.dataManager.favorites
+    // below is repeated code
+    if let thisDrink = drink {
+      if contains(favorites, thisDrink.name) {
+        favoriteButton.setTitle("Unfavorite", forState: .Normal)
+      } else {
+        favoriteButton.setTitle("Favorite", forState: .Normal)
+      }
+      
+    }
+    super.viewWillAppear(false)
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
