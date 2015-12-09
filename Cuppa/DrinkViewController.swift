@@ -115,7 +115,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   // FUNCTIONS
   func loadCupView(ingredients: [Ingredient]) {
     var x : CGFloat = 0
-    var y : CGFloat = cupHolderView.frame.height
+    var y : CGFloat = cupHolderView.frame.height + 3
     var height : CGFloat = cupHolderView.frame.height
     var width : CGFloat = cupHolderView.frame.width + 20 // overshoots but that's fine
     var totalVolume : CGFloat = 0

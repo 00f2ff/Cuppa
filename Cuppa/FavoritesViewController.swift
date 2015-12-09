@@ -1,58 +1,28 @@
 //
-//  SecondViewController.swift
+//  FavoritesViewController.swift
 //  Cuppa
 //
-//  Created by Duncan McIsaac on 12/7/15.
+//  Created by Duncan McIsaac on 12/9/15.
 //  Copyright (c) 2015 Duncan McIsaac. All rights reserved.
 //
 
+import Foundation
 import UIKit
+//import ChameleonFramework
 
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavoritesViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   // OUTLETS
   @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var sortButton: UIBarButtonItem!
   
   
   // ACTIONS
-  @IBAction func changeSort(sender: UIBarButtonItem) {
-    if sortButton.title == "Category" {
-      sortButton.title = "A-Z"
-      // sort drinks by category (only perform computation once)
-      if let cd = categorizedDrinks {
-        self.drinks = cd
-      } else {
-        var coffeeDrinks : [Drink] = []
-        var espressoDrinks : [Drink] = []
-        var flavoredDrinks : [Drink] = []
-        // should be alphabetized by default
-        for drink in self.drinks {
-          if drink.category == "Coffee" {
-            coffeeDrinks.append(drink)
-          } else if drink.category == "Espresso" {
-            espressoDrinks.append(drink)
-          } else if drink.category == "Flavored" {
-            flavoredDrinks.append(drink)
-          }
-        }
-        categorizedDrinks = coffeeDrinks + espressoDrinks + flavoredDrinks
-        drinks = categorizedDrinks!
-      }
-    } else {
-      sortButton.title = "Category"
-      // sort drinks alphabetically
-      drinks = alphabeticalDrinks
-    }
-    self.tableView.reloadData()
-  }
   
   
   // VARIABLES
+  var favorites = [String]()
   let textCellIdentifier = "DrinkCell"
   var drinks : [Drink] = []
-  var alphabeticalDrinks : [Drink] = [] // default
-  var categorizedDrinks : [Drink]? // set on first switch
   
   
   // OVERRIDES
@@ -62,7 +32,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // preload JSON to speed up refreshOptions()
     DataManager.getDrinkDataWithSuccess { (data) -> Void in
       let json = JSON(data: data)
-      self.convertToDrinks(json["drinks"])
+      self.convertToDrinks(json["drinks"]) // this method only adds favorited drinks to self.drinks
       dispatch_async(dispatch_get_main_queue()) {
         self.tableView.reloadData()
       }
@@ -74,7 +44,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     tableView.tableFooterView = UIView()
     tableView.separatorColor = UIColor.clearColor()
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -122,17 +92,16 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
       for (index, ingredient) in jsonDrinks[i]["ingredients"] {
         ingredients.append(Ingredient(name: ingredient["name"].string!, amount: ingredient["amount"].int!))
       }
-      alphabeticalDrinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
+      drinks.append(Drink(name: jsonDrinks[i]["name"].string!, category: jsonDrinks[i]["category"].string!, image: jsonDrinks[i]["image"].string!, favorite: jsonDrinks[i]["favorite"].bool!, ingredients: ingredients, details: jsonDrinks[i]["details"].string!))
       // reset ingredients
       ingredients = []
     }
     // alphabetize
-    alphabeticalDrinks.sort({ return $0.name < $1.name })
-    // set alphabetical to current
-    drinks = alphabeticalDrinks
+    drinks.sort({ return $0.name < $1.name })
     self.tableView.reloadData()
   }
 
-
+  
+  
+  
 }
-

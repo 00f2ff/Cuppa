@@ -31,6 +31,10 @@
 		AE0FC2111C1693480001ACD4 /* List-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC20F1C1693480001ACD4 /* List-32.png */; };
 		AE0FC2161C169AF50001ACD4 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */; };
 		AE0FC21C1C17E6490001ACD4 /* cup.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC21B1C17E6490001ACD4 /* cup.png */; };
+		AE0FC21E1C1812C10001ACD4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC21D1C1812C10001ACD4 /* FavoritesViewController.swift */; };
+		AE0FC2221C1813C70001ACD4 /* Filter-25.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC21F1C1813C70001ACD4 /* Filter-25.png */; };
+		AE0FC2231C1813C70001ACD4 /* List-25.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC2201C1813C70001ACD4 /* List-25.png */; };
+		AE0FC2241C1813C70001ACD4 /* Coffee-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC2211C1813C70001ACD4 /* Coffee-32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		AE0FC20F1C1693480001ACD4 /* List-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-32.png"; path = "../../../../../../Downloads/List-32.png"; sourceTree = "<group>"; };
 		AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
 		AE0FC21B1C17E6490001ACD4 /* cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cup.png; path = ../../assets/cup.png; sourceTree = "<group>"; };
+		AE0FC21D1C1812C10001ACD4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		AE0FC21F1C1813C70001ACD4 /* Filter-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filter-25.png"; path = "../../../../../../Downloads/Filter-25.png"; sourceTree = "<group>"; };
+		AE0FC2201C1813C70001ACD4 /* List-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-25.png"; path = "../../../../../../Downloads/List-25.png"; sourceTree = "<group>"; };
+		AE0FC2211C1813C70001ACD4 /* Coffee-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Coffee-32.png"; path = "../../../../../../Downloads/Coffee-32.png"; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -207,6 +215,7 @@
 				AE0FC1C51C1639CD0001ACD4 /* FilterViewController.swift */,
 				AE0FC1C71C1639CD0001ACD4 /* ListViewController.swift */,
 				AE0FC1F81C1645120001ACD4 /* DrinkViewController.swift */,
+				AE0FC21D1C1812C10001ACD4 /* FavoritesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,6 +223,9 @@
 		AE0FC2011C1691FB0001ACD4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				AE0FC21F1C1813C70001ACD4 /* Filter-25.png */,
+				AE0FC2201C1813C70001ACD4 /* List-25.png */,
+				AE0FC2211C1813C70001ACD4 /* Coffee-32.png */,
 				AE0FC21B1C17E6490001ACD4 /* cup.png */,
 				AE0FC20E1C1693480001ACD4 /* Filter-32.png */,
 				AE0FC20F1C1693480001ACD4 /* List-32.png */,
@@ -332,8 +344,11 @@
 				AE0FC20D1C1693020001ACD4 /* List-50.png in Resources */,
 				AE0FC1D01C1639CD0001ACD4 /* LaunchScreen.xib in Resources */,
 				AE0FC2111C1693480001ACD4 /* List-32.png in Resources */,
+				AE0FC2221C1813C70001ACD4 /* Filter-25.png in Resources */,
+				AE0FC2231C1813C70001ACD4 /* List-25.png in Resources */,
 				AE0FC1E81C16403D0001ACD4 /* drinks.json in Resources */,
 				AE0FC2101C1693480001ACD4 /* Filter-32.png in Resources */,
+				AE0FC2241C1813C70001ACD4 /* Coffee-32.png in Resources */,
 				AE0FC1CD1C1639CD0001ACD4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0FC21E1C1812C10001ACD4 /* FavoritesViewController.swift in Sources */,
 				AE0FC1F21C16408C0001ACD4 /* CircleView.swift in Sources */,
 				AE0FC1C81C1639CD0001ACD4 /* ListViewController.swift in Sources */,
 				AE0FC1EC1C16406B0001ACD4 /* DataManager.swift in Sources */,
