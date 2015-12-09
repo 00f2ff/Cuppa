@@ -34,6 +34,7 @@
 		AE0FC2141C169A560001ACD4 /* CupHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2131C169A560001ACD4 /* CupHolderView.swift */; };
 		AE0FC2161C169AF50001ACD4 /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */; };
 		AE0FC2181C16D5430001ACD4 /* IngredientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2171C16D5430001ACD4 /* IngredientLayer.swift */; };
+		AE0FC21A1C17A5730001ACD4 /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FC2191C17A5730001ACD4 /* RectangleLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		AE0FC2131C169A560001ACD4 /* CupHolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CupHolderView.swift; sourceTree = "<group>"; };
 		AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
 		AE0FC2171C16D5430001ACD4 /* IngredientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientLayer.swift; sourceTree = "<group>"; };
+		AE0FC2191C17A5730001ACD4 /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +238,7 @@
 			children = (
 				AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */,
 				AE0FC2171C16D5430001ACD4 /* IngredientLayer.swift */,
+				AE0FC2191C17A5730001ACD4 /* RectangleLayer.swift */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				AE0FC1C81C1639CD0001ACD4 /* ListViewController.swift in Sources */,
 				AE0FC1EC1C16406B0001ACD4 /* DataManager.swift in Sources */,
 				AE0FC2141C169A560001ACD4 /* CupHolderView.swift in Sources */,
+				AE0FC21A1C17A5730001ACD4 /* RectangleLayer.swift in Sources */,
 				AE0FC1EE1C1640760001ACD4 /* Ingredient.swift in Sources */,
 				AE0FC1F51C1640FF0001ACD4 /* DrinkCell.swift in Sources */,
 				AE0FC2181C16D5430001ACD4 /* IngredientLayer.swift in Sources */,

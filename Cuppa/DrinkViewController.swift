@@ -21,6 +21,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   //  @IBOutlet weak var favoriteButton : UIButton!
   
   
+  @IBOutlet weak var cupBorderView: UIView!
   
   // ACTIONS
 //  @IBAction func favoriteStatusHasChanged(sender: UIButton) {
@@ -55,6 +56,28 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       // remove extra lines at bottom
       tableView.tableFooterView = UIView()
       tableView.separatorColor = UIColor.clearColor()
+      cupHolderView.backgroundColor = UIColor.clearColor()
+      
+//      cupHolderView.layer.cornerRadius = 80
+//      cupHolderView.layer.borderColor = UIColor.blackColor().CGColor
+//      cupHolderView.layer.borderWidth = 5.0
+      
+      var maskPath = UIBezierPath(roundedRect: cupHolderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 40.0, height: 40.0))
+//      maskPath.addClip()
+//      UIColor.blackColor().setStroke()
+//      maskPath.lineWidth = 5.0
+//      maskPath.stroke()
+      let maskLayer = CAShapeLayer()
+      maskLayer.path = maskPath.CGPath
+//      cupHolderView.layer.borderColor = UIColor.blackColor().CGColor
+//      cupHolderView.layer.borderWidth = 5.0
+      var maskPath2 = UIBezierPath(roundedRect: cupBorderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 45.0, height: 45.0))
+      let maskLayer2 = CAShapeLayer()
+      maskLayer2.path = maskPath2.CGPath
+      cupHolderView.layer.mask = maskLayer
+      cupBorderView.layer.mask = maskLayer2
+//      cupHolderView.layer.addSublayer(maskLayer)
+      
       
       self.loadCupView(thisDrink.ingredients)
       
@@ -124,10 +147,10 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   func loadCupView(ingredients: [Ingredient]) {
     var x : CGFloat = 0
 //    var y : CGFloat = 0 // cupHolderView.frame.height
-    var y : CGFloat = cupHolderView.frame.height - 30
-    var height : CGFloat = cupHolderView.frame.height - 30
-    var width : CGFloat = cupHolderView.frame.width - 30
-    drawCup(height, width: width)
+    var y : CGFloat = cupHolderView.frame.height
+    var height : CGFloat = cupHolderView.frame.height
+    var width : CGFloat = cupHolderView.frame.width + 20 // overshoots but that's fine
+//    drawCup(height, width: width)
     var totalVolume : CGFloat = 0
     var mutableIngredients : [Ingredient] = []
     for ingredient in ingredients {
@@ -151,7 +174,10 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
   } // loadCupView
   
   func drawCup(height: CGFloat, width: CGFloat) {
-    
+    var rectangleLayer = RectangleLayer()
+    cupHolderView.layer.addSublayer(rectangleLayer)
+//    rectangleLayer.animateStrokeWithColor(UIColor.redColor())
+    rectangleLayer.draw()
   }
   
   //  func changeButtonTitle(thisDrink: Drink) {
