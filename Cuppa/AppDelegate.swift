@@ -13,29 +13,6 @@ import ChameleonFramework
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  
-//  let dataManager = DataManager()
-//  
-//  func saveData() {
-//    let navigationController = window!.rootViewController as! UINavigationController
-//    let controller = navigationController.viewControllers[0] as! FavoritesViewController
-//    let controller2 = navigationController.viewControllers[0] as! DrinkViewController
-//    // Since I decided the UX would suffer if I used a delegate or segue after changing favorite state, each view controller may have different data
-//    dataManager.favorites = Array(Set(controller.favorites + controller2.favorites))
-//    dataManager.saveFavorites()
-//  }
-//  
-//  func restoreData() {
-//    dataManager.loadFavorites()
-//    let navigationController = window!.rootViewController as! UINavigationController
-//    let controller = navigationController.viewControllers[0] as! FavoritesViewController
-//    let controller2 = navigationController.viewControllers[0] as! DrinkViewController
-//    if !dataManager.favorites.isEmpty {
-//      controller.favorites = dataManager.favorites
-//      controller2.favorites = dataManager.favorites
-//    }
-//  }
-
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.

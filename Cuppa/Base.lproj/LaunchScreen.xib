@@ -12,21 +12,56 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuppa" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <rect key="frame" x="154.5" y="277" width="171" height="69.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular" misplaced="YES">
+                        <rect key="frame" x="141" y="410" width="175" height="70"/>
+                    </variation>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cuppa-white-200" translatesAutoresizingMaskIntoConstraints="NO" id="LmF-zm-Tj1">
+                    <rect key="frame" x="187" y="149" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="1pN-oA-rv4"/>
+                        <constraint firstAttribute="height" constant="120" id="Qp5-vo-se8"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.2418571412563324" green="0.17698898911476135" blue="0.1230514720082283" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="139.5" id="5cJ-9S-tgC"/>
+                <constraint firstAttribute="centerX" secondItem="LmF-zm-Tj1" secondAttribute="centerX" id="7TB-fg-bWX">
+                    <variation key="heightClass=regular" constant="12"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk">
+                    <variation key="heightClass=regular" constant="11.5"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="-0.5"/>
+                </constraint>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="LmF-zm-Tj1" secondAttribute="bottom" constant="8" id="W87-ee-dGf"/>
+                <constraint firstItem="LmF-zm-Tj1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="149" id="WgS-83-49g">
+                    <variation key="heightClass=regular" constant="282"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="141"/>
+                </constraint>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="fvb-Df-36g"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="LmF-zm-Tj1" secondAttribute="bottom" constant="1" id="guU-iE-Ql9"/>
+                <constraint firstAttribute="centerY" secondItem="LmF-zm-Tj1" secondAttribute="centerY" constant="23" id="pv9-xR-lME"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="pv9-xR-lME"/>
+                    <exclude reference="5cJ-9S-tgC"/>
+                    <exclude reference="fvb-Df-36g"/>
+                    <exclude reference="guU-iE-Ql9"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="cuppa-white-200" width="200" height="164"/>
+    </resources>
 </document>

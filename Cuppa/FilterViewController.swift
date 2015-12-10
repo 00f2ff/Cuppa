@@ -77,6 +77,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
   
   
   // VARIABLES
+  var holderView = HolderView(frame: CGRectZero)
   let textCellIdentifier = "DrinkCell"
   var category: String = "Coffee"
   var drinks: JSON = []
@@ -105,6 +106,11 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     self.view.backgroundColor = FlatBrownDark()
     
   } // viewDidLoad
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+//    addHolderView()
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -113,8 +119,13 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
   
   
   // DELEGATION
+//  func removeHolderFromView() {
+//    
+//    holderView.removeFromSuperview()
+//  }
+  
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1 // init as 0?
+    return 1
   } // numberOfSectionsInTableView
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -154,6 +165,14 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
   }
   
   // FUNCTIONS
+//  func addHolderView() {
+//    holderView.frame = CGRect(x: view.bounds.width, y: view.bounds.height, width: view.bounds.width, height: view.bounds.height)
+//    holderView.parentFrame = view.frame
+//    holderView.delegate = self
+//    view.addSubview(holderView)
+//    holderView.drawArc()
+//  }
+  
   func updateUI(category: String) {
     self.category = category
     self.mainLabel.text = "\(category) Volume"

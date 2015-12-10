@@ -43,6 +43,8 @@
 		AE0FC2311C189FDC0001ACD4 /* Hearts-Filled-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC22F1C189FDC0001ACD4 /* Hearts-Filled-32.png */; };
 		AE0FC2321C189FDC0001ACD4 /* Hearts-32.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC2301C189FDC0001ACD4 /* Hearts-32.png */; };
 		AE0FC2341C18A5A20001ACD4 /* cuppa_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0FC2331C18A5A20001ACD4 /* cuppa_icon.png */; };
+		AEE2116C1C1903C400D68D90 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE2116B1C1903C400D68D90 /* HolderView.swift */; };
+		AEE2116E1C190CB700D68D90 /* CuppaTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE2116D1C190CB700D68D90 /* CuppaTextLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		AE0FC22F1C189FDC0001ACD4 /* Hearts-Filled-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hearts-Filled-32.png"; path = "../../../../../../Downloads/Hearts-Filled-32.png"; sourceTree = "<group>"; };
 		AE0FC2301C189FDC0001ACD4 /* Hearts-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hearts-32.png"; path = "../../../../../../Downloads/Hearts-32.png"; sourceTree = "<group>"; };
 		AE0FC2331C18A5A20001ACD4 /* cuppa_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cuppa_icon.png; path = ../../../../../../Downloads/cuppa_icon.png; sourceTree = "<group>"; };
+		AEE2116B1C1903C400D68D90 /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		AEE2116D1C190CB700D68D90 /* CuppaTextLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuppaTextLayer.swift; sourceTree = "<group>"; };
 		EA91786BC8BBB43FFA40FEDA /* Pods_CuppaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuppaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -212,6 +216,7 @@
 			children = (
 				AE0FC2121C169A410001ACD4 /* Layers */,
 				AE0FC1F11C16408C0001ACD4 /* CircleView.swift */,
+				AEE2116B1C1903C400D68D90 /* HolderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				AE0FC2151C169AF50001ACD4 /* ArcLayer.swift */,
+				AEE2116D1C190CB700D68D90 /* CuppaTextLayer.swift */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE2116C1C1903C400D68D90 /* HolderView.swift in Sources */,
 				AE0FC21E1C1812C10001ACD4 /* FavoritesViewController.swift in Sources */,
 				AE0FC1F21C16408C0001ACD4 /* CircleView.swift in Sources */,
 				AE0FC1C81C1639CD0001ACD4 /* ListViewController.swift in Sources */,
@@ -501,6 +508,7 @@
 				AE0FC1C41C1639CD0001ACD4 /* AppDelegate.swift in Sources */,
 				AE0FC1F71C1641090001ACD4 /* IngredientCell.swift in Sources */,
 				AE0FC1C61C1639CD0001ACD4 /* FilterViewController.swift in Sources */,
+				AEE2116E1C190CB700D68D90 /* CuppaTextLayer.swift in Sources */,
 				AE0FC1F91C1645120001ACD4 /* DrinkViewController.swift in Sources */,
 				AE0FC1F01C16407E0001ACD4 /* Drink.swift in Sources */,
 				AE0FC2161C169AF50001ACD4 /* ArcLayer.swift in Sources */,
