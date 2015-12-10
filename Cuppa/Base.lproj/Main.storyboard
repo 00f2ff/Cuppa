@@ -322,8 +322,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jA-tE-Jum">
                                 <rect key="frame" x="150.5" y="300" width="300" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="7tN-hm-N2l"/>
-                                    <constraint firstAttribute="width" constant="300" id="KVq-yK-g4p"/>
+                                    <constraint firstAttribute="width" constant="300" id="7tN-hm-N2l">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="280"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="300" id="KVq-yK-g4p">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="260"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="80" id="T4f-su-fdp"/>
                                     <constraint firstAttribute="height" constant="80" id="vbF-1j-qDx"/>
                                 </constraints>
@@ -338,6 +342,7 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
+                                        <exclude reference="7tN-hm-N2l"/>
                                         <include reference="KVq-yK-g4p"/>
                                         <include reference="T4f-su-fdp"/>
                                         <exclude reference="vbF-1j-qDx"/>
@@ -372,11 +377,15 @@
                             </constraint>
                             <constraint firstItem="C9O-8f-DOc" firstAttribute="leading" secondItem="GGE-bR-g13" secondAttribute="trailing" constant="35.5" id="R1f-Px-7YS"/>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="leading" secondItem="2Jj-kX-VcS" secondAttribute="leadingMargin" constant="34" id="T9N-ft-19i"/>
-                            <constraint firstAttribute="centerX" secondItem="8jA-tE-Jum" secondAttribute="centerX" id="T9c-lE-h3B"/>
+                            <constraint firstAttribute="centerX" secondItem="8jA-tE-Jum" secondAttribute="centerX" id="T9c-lE-h3B">
+                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="8jA-tE-Jum" secondAttribute="trailing" constant="34" id="U2x-s6-THt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X7g-iT-twC" secondAttribute="trailing" constant="34" id="UVK-iz-sA6"/>
                             <constraint firstItem="8jA-tE-Jum" firstAttribute="top" secondItem="eOD-ZS-ULN" secondAttribute="bottom" constant="385" id="W5h-Hi-TmP"/>
-                            <constraint firstAttribute="centerX" secondItem="evQ-tN-fSu" secondAttribute="centerX" constant="21" id="ZLE-Lu-zSx"/>
+                            <constraint firstAttribute="centerX" secondItem="evQ-tN-fSu" secondAttribute="centerX" constant="21" id="ZLE-Lu-zSx">
+                                <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                            </constraint>
                             <constraint firstAttribute="centerY" secondItem="X7g-iT-twC" secondAttribute="centerY" constant="-168" id="acS-U0-IcM"/>
                             <constraint firstItem="X7g-iT-twC" firstAttribute="top" secondItem="GGE-bR-g13" secondAttribute="bottom" constant="170" id="bbW-j9-FsJ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="178"/>

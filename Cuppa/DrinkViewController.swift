@@ -63,10 +63,7 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       // remove extra lines at bottom
       tableView.tableFooterView = UIView()
       tableView.separatorColor = UIColor.clearColor()
-//      tableView.backgroundColor = UIColor.blackColor()
-      
-      
-      
+
       cupHolderView.backgroundColor = UIColor.clearColor()
       // mask view to be curved
       var maskPath = UIBezierPath(roundedRect: cupHolderView.bounds, byRoundingCorners: .BottomRight | .BottomLeft, cornerRadii: CGSize(width: 40.0, height: 40.0))
@@ -102,6 +99,15 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   } // didReceiveMemoryWarning
+  
+  // only permit portrait
+  override func shouldAutorotate() -> Bool {
+    return false
+  }
+  
+  override func supportedInterfaceOrientations() -> Int {
+    return UIInterfaceOrientation.Portrait.rawValue
+  }
   
   
   // DELEGATES

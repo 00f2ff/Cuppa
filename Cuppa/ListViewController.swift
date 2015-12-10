@@ -80,6 +80,15 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Dispose of any resources that can be recreated.
   }
   
+  // only permit portrait
+  override func shouldAutorotate() -> Bool {
+    return false
+  }
+  
+  override func supportedInterfaceOrientations() -> Int {
+    return UIInterfaceOrientation.Portrait.rawValue
+  }
+  
   
   // DELEGATION
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
