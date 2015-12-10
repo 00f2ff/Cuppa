@@ -534,11 +534,43 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZ8-NR-lkb">
                                                     <rect key="frame" x="19" y="11" width="25" height="22"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vxf-ie-sGK" firstAttribute="leading" secondItem="hEn-XE-cON" secondAttribute="leadingMargin" constant="44" id="KnB-M6-DXk"/>
+                                                <constraint firstAttribute="centerY" secondItem="vxf-ie-sGK" secondAttribute="centerY" constant="0.25" id="mY9-9p-nS2"/>
+                                                <constraint firstAttribute="centerY" secondItem="vxf-ie-sGK" secondAttribute="centerY" constant="0.25" id="n2X-f1-5e7"/>
+                                                <constraint firstItem="vxf-ie-sGK" firstAttribute="leading" secondItem="hEn-XE-cON" secondAttribute="leadingMargin" constant="44" id="uy6-iy-loW"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="KnB-M6-DXk"/>
+                                                    <exclude reference="mY9-9p-nS2"/>
+                                                    <exclude reference="n2X-f1-5e7"/>
+                                                    <exclude reference="uy6-iy-loW"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="KnB-M6-DXk"/>
+                                                    <include reference="n2X-f1-5e7"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="mY9-9p-nS2"/>
+                                                    <include reference="uy6-iy-loW"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="drinkImageView" destination="VZ8-NR-lkb" id="sXa-H3-JdU"/>
@@ -617,6 +649,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L0l-SD-VnK" id="y4q-DP-MGS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzZ-tx-t4g">
+                                                    <rect key="frame" x="19" y="11" width="25" height="22"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorite Drink Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-Zb-SZi">
                                                     <rect key="frame" x="52" y="11" width="293" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -629,10 +664,33 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzZ-tx-t4g">
-                                                    <rect key="frame" x="19" y="11" width="25" height="22"/>
-                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ttg-Zb-SZi" firstAttribute="top" secondItem="y4q-DP-MGS" secondAttribute="topMargin" constant="3" id="1tT-44-oSA"/>
+                                                <constraint firstItem="Ttg-Zb-SZi" firstAttribute="leading" secondItem="y4q-DP-MGS" secondAttribute="leadingMargin" constant="44" id="IDB-Pk-0ct"/>
+                                                <constraint firstAttribute="centerY" secondItem="Ttg-Zb-SZi" secondAttribute="centerY" constant="0.25" id="f9P-h4-etB"/>
+                                                <constraint firstItem="Ttg-Zb-SZi" firstAttribute="leading" secondItem="y4q-DP-MGS" secondAttribute="leadingMargin" constant="44" id="gJg-hn-dQB"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="1tT-44-oSA"/>
+                                                    <exclude reference="IDB-Pk-0ct"/>
+                                                    <exclude reference="f9P-h4-etB"/>
+                                                    <exclude reference="gJg-hn-dQB"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="1tT-44-oSA"/>
+                                                    <include reference="gJg-hn-dQB"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="IDB-Pk-0ct"/>
+                                                    <include reference="f9P-h4-etB"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="drinkImageView" destination="bzZ-tx-t4g" id="Vt1-5R-Aql"/>
