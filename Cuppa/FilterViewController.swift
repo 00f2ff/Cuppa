@@ -208,12 +208,12 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     var hasSecondary : Bool = false
     for i in 0...self.drinks.count-1 {
       for (index, ingredient) in self.drinks[i]["ingredients"] {
-        if ingredient["name"].string == "Espresso" {
+        if ingredient["name"].string == self.category && self.category == "Espresso" {
           // check main
           if ingredient["amount"].int == self.mainVolume {
             mainBool = true
           }
-        } else if ingredient["name"].string == "Coffee" { // provide range
+        } else if ingredient["name"].string == self.category && self.category == "Coffee" { // provide range
           if ingredient["amount"].int >= self.mainVolume - 1 && ingredient["amount"].int <= self.mainVolume + 1 {
             mainBool = true
           }
@@ -233,12 +233,13 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
           ingredients.append(Ingredient(name: ingredient["name"].string!, amount: ingredient["amount"].int!))
         }
         drinkResults.append(Drink(name: self.drinks[i]["name"].string!, category: self.drinks[i]["category"].string!, image: self.drinks[i]["image"].string!, favorite: self.drinks[i]["favorite"].bool!, ingredients: ingredients, details: self.drinks[i]["details"].string!))
-        // reset ingredients
-        ingredients = []
-        mainBool = false
-        secondaryBool = false
-        hasSecondary = false
+        
       }
+      // reset ingredients
+      ingredients = []
+      mainBool = false
+      secondaryBool = false
+      hasSecondary = false
     }
     //    }
     self.tableView.reloadData()
