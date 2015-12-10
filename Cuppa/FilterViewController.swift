@@ -184,7 +184,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
   
   func updateUI(category: String) {
     self.category = category
-    self.mainLabel.text = "\(category) Volume"
+    self.mainLabel.text = category
     // reset slider values
     UIView.animateWithDuration(0.5, animations: {
       self.mainSlider.setValue(0.5, animated: true)
