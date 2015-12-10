@@ -63,6 +63,9 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       // remove extra lines at bottom
       tableView.tableFooterView = UIView()
       tableView.separatorColor = UIColor.clearColor()
+//      tableView.backgroundColor = UIColor.blackColor()
+      
+      
       
       cupHolderView.backgroundColor = UIColor.clearColor()
       // mask view to be curved
@@ -87,6 +90,11 @@ class DrinkViewController : UIViewController, UITableViewDataSource, UITableView
       }
       
     }
+    
+    // trying to get tableView height to equal sum of cells (doesn't work)
+//    var frame = self.tableView.frame;
+//    frame.size.height = self.tableView.contentSize.height;
+//    self.tableView.frame = frame;
     super.viewWillAppear(false)
   }
   

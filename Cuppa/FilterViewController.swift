@@ -133,12 +133,6 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     } else {
       cell.drinkImageView.image = UIImage(named: "Flavored-white.png")
     }
-    if category == "Coffee" {
-      cell.backgroundColor = FlatBrownDark()
-    } else {
-      cell.backgroundColor = FlatBrown()
-    }
-    
     
     return cell
   } // tableView
